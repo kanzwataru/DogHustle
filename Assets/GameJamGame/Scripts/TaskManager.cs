@@ -49,7 +49,7 @@ public class TaskManager : MonoBehaviour {
     void Start () {
 
         //set-up transforms
-        backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
+        //backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
         waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>().position;
         foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
 
