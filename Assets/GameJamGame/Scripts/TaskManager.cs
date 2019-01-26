@@ -130,9 +130,8 @@ public class TaskManager : MonoBehaviour {
             {
                 //Mission failed
                 timerOn = false;
-                PlayerMovement.canMove = false;
+                EventBus.Emit<GameOverEvent>(new GameOverEvent());
             }
         }
     }
-
 }

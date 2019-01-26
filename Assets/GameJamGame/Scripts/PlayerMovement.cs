@@ -8,6 +8,7 @@ public class PlayerMovement : MonoBehaviour {
 
 	void Start () {
         motor = this.GetComponentInChildren<Motor>();
+        EventBus.AddListener<GameOverEvent>(HandleEvent);
 	}
 
     private void FixedUpdate()
@@ -25,5 +26,9 @@ public class PlayerMovement : MonoBehaviour {
             dir.x = -1;
 
         motor.Move(dir);
+    }
+
+    private void HandleEvent(GameOverEvent msg) {
+        enabled = false;
     }
 }
