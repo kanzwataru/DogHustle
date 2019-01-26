@@ -61,7 +61,7 @@ public class TaskManager : MonoBehaviour {
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
 
         //Fill tasks arraylist:
-        tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
+        //tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
         tasks.Add(new Task(foodImage, 20f, EatAt, foodBowlPos));
         tasks.Add(new Task(waterImage, 20f, DrinkAt, waterBowlPos));
 

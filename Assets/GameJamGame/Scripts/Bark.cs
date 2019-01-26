@@ -8,11 +8,14 @@ public class Bark : MonoBehaviour {
 
     public GameObject barkEffect;
     public TaskManager taskManager;
-    public float barkRate = 1.0f;
+    public float barkRate = 2f;
     private float nextBark;
-    //public AudioClip barkSound;
+    public AudioClip barkSound;
+    public AudioClip drinkSound1;
+    public AudioClip drinkSound2;
     private AudioSource source;
     private string action = "";
+    private bool inTriggerZone = false; //for free barking
 
     private void Start()
     {
@@ -22,8 +25,21 @@ public class Bark : MonoBehaviour {
     //Effects: Sound and Visual
     private void BarkEffects()
     {
-        //source.PlayOneShot(barkSound);
+        source.pitch = Random.Range(0.95f, 1.05f);
+        source.PlayOneShot(barkSound);
         StartCoroutine(BarkBlink());
+    }
+
+    private void DrinkWaterSound()
+    {
+        if (Random.Range(0,2) == 0)
+        {
+            source.PlayOneShot(drinkSound1);
+        }
+        else
+        {
+            source.PlayOneShot(drinkSound2);
+        }
     }
 
     IEnumerator BarkBlink()
@@ -35,11 +51,16 @@ public class Bark : MonoBehaviour {
         barkEffect.SetActive(true);
         yield return new WaitForSeconds(0.2f);
         barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+
     }
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark)
         {
             if (other.gameObject.tag == "FoodBowl")
             {
@@ -48,6 +69,7 @@ public class Bark : MonoBehaviour {
             }
             else if (other.gameObject.tag == "WaterBowl")
             {
+                DrinkWaterSound();
                 action = "water";
                 print("Interacted with Water Bowl");
             }
@@ -57,17 +79,31 @@ public class Bark : MonoBehaviour {
                 print("Interacted with Back Door");
             }
 
+            nextBark = Time.time + barkRate;
             taskManager.CheckTask(action);
         }
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        inTriggerZone = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inTriggerZone = false;
     }
 
     private void Update()
     {
-        if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
+        if (!inTriggerZone)
         {
-            nextBark = Time.time + barkRate;
-            BarkEffects();
+            if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
+            {
+                nextBark = Time.time + barkRate;
+                BarkEffects();
+            }
         }
+
     }
 }
