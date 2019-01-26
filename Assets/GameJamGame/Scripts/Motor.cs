@@ -17,7 +17,7 @@ public class Motor : MonoBehaviour {
     {
         if (canMove)
         {
-            rigidBody.AddForce(dir * speed);
+            rigidBody.AddForce(new Vector3(dir.x, 0, dir.y) * -speed);
         }
     }
 
