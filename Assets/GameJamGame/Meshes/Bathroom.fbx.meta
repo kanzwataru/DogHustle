@@ -1,0 +1,183 @@
+fileFormatVersion: 2
+guid: 3eb49b58026b84e46b1055038f33696a
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    100002: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+      1
+    100004: BakedMesh
+    100006: //RootNode
+    100008: Bathroom
+    100010: Bathroom 1
+    100012: Bathroomfloor
+    100014: Bathroomfloor 1
+    100016: Bathroomwall1
+    100018: Bathroomwall1 1
+    100020: Bathroomwall2
+    100022: Bathroomwall2 1
+    100024: bathroomwall3
+    100026: bathroomwall3 1
+    100028: HomeViewpoint
+    100030: HomeViewpoint 1
+    100032: Root
+    100034: Root 1
+    100036: Sink
+    100038: Sink 1
+    100040: SourceData
+    100042: Toilet
+    100044: Toilet 1
+    100046: Tub
+    100048: Tub 1
+    400000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    400002: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+      1
+    400004: BakedMesh
+    400006: //RootNode
+    400008: Bathroom
+    400010: Bathroom 1
+    400012: Bathroomfloor
+    400014: Bathroomfloor 1
+    400016: Bathroomwall1
+    400018: Bathroomwall1 1
+    400020: Bathroomwall2
+    400022: Bathroomwall2 1
+    400024: bathroomwall3
+    400026: bathroomwall3 1
+    400028: HomeViewpoint
+    400030: HomeViewpoint 1
+    400032: Root
+    400034: Root 1
+    400036: Sink
+    400038: Sink 1
+    400040: SourceData
+    400042: Toilet
+    400044: Toilet 1
+    400046: Tub
+    400048: Tub 1
+    2100000: Double Sided Material
+    2100002: Single Sided Material
+    2100004: No Name
+    2300000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    2300002: Bathroomfloor
+    2300004: Bathroomwall1
+    2300006: Bathroomwall2
+    2300008: bathroomwall3
+    2300010: Sink
+    2300012: Toilet
+    2300014: Tub
+    3300000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    3300002: Bathroomfloor
+    3300004: Bathroomwall1
+    3300006: Bathroomwall2
+    3300008: bathroomwall3
+    3300010: Sink
+    3300012: Toilet
+    3300014: Tub
+    4300000: Sink
+    4300002: Tub
+    4300004: Toilet
+    4300006: Bathroomwall1
+    4300008: Bathroomwall2
+    4300010: bathroomwall3
+    4300012: Bathroomfloor
+    4300014: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    2186277476908879412: ImportLogs
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Double Sided Material
+    second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
+    second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Single Sided Material
+    second: {fileID: 2100000, guid: 7102d8f097a8b4d0382dbb52715a684d, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
