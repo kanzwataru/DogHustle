@@ -10,12 +10,14 @@ public class TaskManager : MonoBehaviour {
         public string description;
         public float timer;
         public System.Action<Vector3> function;
+        public Vector3 position;
 
-        public Task(string description, float timer, System.Action<Vector3> function)
+        public Task(string description, float timer, System.Action<Vector3> function, Vector3 position)
         {
             this.description = description;
             this.timer = timer;
             this.function = function;
+            this.position = position;
         }
     }
 
@@ -28,6 +30,9 @@ public class TaskManager : MonoBehaviour {
     private Vector3 backDoorPos;
     private Vector3 waterBowlPos;
     private Vector3 foodBowlPos;
+
+    public static string taskLocation = "";
+    private Task currentTask;
 
     private List<Task> tasks = new List<Task>();
     private float timer;
@@ -47,20 +52,30 @@ public class TaskManager : MonoBehaviour {
         taskBox = GameObject.FindGameObjectWithTag("TaskBox");
 
         //Fill tasks arraylist:
-        tasks.Add(new Task("Bark at front door", 15f, BarkAt));
-        tasks.Add(new Task("Eat some food", 20f, EatAt));
-        tasks.Add(new Task("Drink some water", 20f, DrinkAt));
+        tasks.Add(new Task("Bark at front door", 15f, BarkAt, backDoorPos));
+        tasks.Add(new Task("Eat some food", 20f, EatAt, foodBowlPos));
+        tasks.Add(new Task("Drink some water", 20f, DrinkAt, waterBowlPos));
 
         GetNewTask(); //tasks all have their own text, times, and RULES
     }
 
     public void GetNewTask()
     {
-        Task currentTask = TaskRandomizer();
-        taskBox.SetActive(true); //show task to player
+        currentTask = TaskRandomizer();
         taskText.text = tasks[task].description; //set task text
-        currentTask.function(backDoorPos); //set current task rules
+        currentTask.function(currentTask.position); //set current task rules
         timer = currentTask.timer; //start new timer
+    }
+
+    public void CheckTask(string action)
+    {
+        if (currentTask != null)
+        {
+            if (string.Compare(action, taskLocation) == 0)
+            {
+                TaskComplete();
+            }
+        }
     }
 
     //Randomly picks a task from list
@@ -79,26 +94,28 @@ public class TaskManager : MonoBehaviour {
 
     private IEnumerator TaskDelay()
     {
-        yield return new WaitForSeconds(2f);
-        timerOn = true;
+        yield return new WaitForSeconds(1.8f);
         GetNewTask();
+        yield return new WaitForSeconds(0.2f);
+        taskBox.SetActive(true); //show task to player
+        timerOn = true;
     }
 
     //TASK RULES
 
-    public void BarkAt(Vector3 location)
+    private void BarkAt(Vector3 location)
     {
-
+        taskLocation = "back";
     }
 
     private void DrinkAt(Vector3 location)
     {
-
+        taskLocation = "water";
     }
 
     private void EatAt(Vector3 location)
     {
-
+        taskLocation = "food";
     }
 
     //Update for timer
