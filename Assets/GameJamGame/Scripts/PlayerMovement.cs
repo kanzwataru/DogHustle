@@ -12,25 +12,18 @@ public class PlayerMovement : MonoBehaviour {
 
     private void FixedUpdate()
     {
-        
+        var dir = Vector2Int.zero;
+
         if (Input.GetKey(KeyCode.W))
-        {
-            motor.Move(new Vector2(0, 1));
-        }
+            dir.y = 1;
         else if (Input.GetKey(KeyCode.S))
-        {
-            motor.Move(new Vector2(0, -1));
-        }
+            dir.y = -1;
 
         if (Input.GetKey(KeyCode.A))
-        {
-            motor.Move(new Vector2(-1, 0));
-        }
+            dir.x = 1;
         else if (Input.GetKey(KeyCode.D))
-        {
-            motor.Move(new Vector2(1, 0));
-        }
+            dir.x = -1;
 
+        motor.Move(dir);
     }
-
 }

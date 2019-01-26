@@ -82,6 +82,15 @@ ModelImporter:
     4300012: Livingroom-wall1
     4300014: Livingroom-wall2
     4300016: Tv
+    6400000: Coffeetable
+    6400002: Floor-livingroom
+    6400004: Lamptable
+    6400006: Livingroom-wall1
+    6400008: Livingroom-wall2
+    6400010: Oudoors
+    6400012: Plant
+    6400014: rug
+    6400016: Tv
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -126,7 +135,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1

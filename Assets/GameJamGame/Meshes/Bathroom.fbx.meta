@@ -87,6 +87,14 @@ ModelImporter:
     4300012: Bathroomfloor
     4300014: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
     4300016: Hallway
+    6400000: Bathroomfloor
+    6400002: Bathroomwall1
+    6400004: Bathroomwall2
+    6400006: bathroomwall3
+    6400008: Hallway
+    6400010: Sink
+    6400012: Toilet
+    6400014: Tub
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -136,7 +144,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -161,7 +169,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2

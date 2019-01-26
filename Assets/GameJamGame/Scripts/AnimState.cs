@@ -6,6 +6,7 @@ using UnityEngine;
 public class AnimStateInfo {
 	public string name;
 	public GameObject prefab;
+	public int frameRate = 12;
 }
 
 public class AnimState : MonoBehaviour {
@@ -39,7 +40,13 @@ public class AnimState : MonoBehaviour {
 			var obj = Instantiate(anim.prefab, pos, rot, this.transform);
 			obj.SetActive(false);
 
-			_instantiatedAnims.Add(anim.name, new Anim() {obj = obj, qanim = obj.GetComponent<QuillAnimation>()});
+			var qanim = obj.GetComponent<QuillAnimation>();
+			if(qanim == null) {
+				qanim = obj.AddComponent<QuillAnimation>();
+				qanim.frameRate = anim.frameRate;
+			}
+
+			_instantiatedAnims.Add(anim.name, new Anim() {obj = obj, qanim = qanim});
 		}
 
 		current = animations[0].name;

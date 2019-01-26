@@ -16,7 +16,14 @@ public class QuillAnimation : MonoBehaviour {
 	void Start () {
         QuillAnimSystem.instance.RequestFPSCounter(frameRate);
 
-        var root = transform.Find("BakedMesh").Find("Root");
+        var root = transform.Find("BakedMesh");
+        if(root) {
+            root = root.Find("Root");
+        }
+        else {
+            root = transform.Find("Root");
+        }
+
         int layer_count = root.childCount;
 
         _layersFrames = new GameObject[layer_count][];  // create arrays for each layer
