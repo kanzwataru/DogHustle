@@ -7,14 +7,14 @@ public class TaskManager : MonoBehaviour {
 
     public class Task
     {
-        public string description;
+        public Texture image;
         public float timer;
         public System.Action<Vector3> function;
         public Vector3 position;
 
-        public Task(string description, float timer, System.Action<Vector3> function, Vector3 position)
+        public Task(Texture image, float timer, System.Action<Vector3> function, Vector3 position)
         {
-            this.description = description;
+            this.image = image;
             this.timer = timer;
             this.function = function;
             this.position = position;
@@ -24,8 +24,16 @@ public class TaskManager : MonoBehaviour {
     //TIMED TASKS THE PLAYER MUST DO
 
     private GameObject taskBox;
-    private Text taskText;
     private Text timerText;
+    private Animator iconAnimator;
+
+    public Texture foodImage;
+    public Texture waterImage;
+    private GameObject currentImageObject;
+    private RawImage currentImage;
+    private RectTransform timerBar;
+    private Vector3 startWidth = new Vector3(1, 1, 1);
+    private Vector3 endWidth = new Vector3(0, 1, 1);
 
     private Vector3 backDoorPos;
     private Vector3 waterBowlPos;
@@ -35,7 +43,6 @@ public class TaskManager : MonoBehaviour {
     private Task currentTask;
 
     private List<Task> tasks = new List<Task>();
-    private float timer;
     private int task;
     private bool timerOn = true;
 
@@ -47,14 +54,16 @@ public class TaskManager : MonoBehaviour {
         foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
 
         //Get UI:
-        taskText = GameObject.FindGameObjectWithTag("TaskText").GetComponent<Text>();
-        timerText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
+        currentImageObject = GameObject.FindGameObjectWithTag("TaskImage");
+        currentImage = currentImageObject.GetComponent<RawImage>();
         taskBox = GameObject.FindGameObjectWithTag("TaskBox");
+        timerBar = GameObject.FindGameObjectWithTag("TimerBar").GetComponent<RectTransform>();
+        iconAnimator = taskBox.GetComponentInChildren<Animator>();
 
         //Fill tasks arraylist:
-        tasks.Add(new Task("Bark at front door", 15f, BarkAt, backDoorPos));
-        tasks.Add(new Task("Eat some food", 20f, EatAt, foodBowlPos));
-        tasks.Add(new Task("Drink some water", 20f, DrinkAt, waterBowlPos));
+        tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
+        tasks.Add(new Task(foodImage, 20f, EatAt, foodBowlPos));
+        tasks.Add(new Task(waterImage, 20f, DrinkAt, waterBowlPos));
 
         GetNewTask(); //tasks all have their own text, times, and RULES
     }
@@ -62,9 +71,10 @@ public class TaskManager : MonoBehaviour {
     public void GetNewTask()
     {
         currentTask = TaskRandomizer();
-        taskText.text = tasks[task].description; //set task text
+        print("New Task");
+        currentImage.texture = currentTask.image;
+        StartCoroutine(LerpTimer());
         currentTask.function(currentTask.position); //set current task rules
-        timer = currentTask.timer; //start new timer
     }
 
     public void CheckTask(string action)
@@ -89,16 +99,18 @@ public class TaskManager : MonoBehaviour {
     {
         timerOn = false;
         taskBox.SetActive(false);
+        currentImageObject.transform.rotation = Quaternion.Euler(0, 0, 0);
+        iconAnimator.SetBool("Urgent", false);
         StartCoroutine(TaskDelay());
     }
 
     private IEnumerator TaskDelay()
     {
         yield return new WaitForSeconds(1.8f);
-        GetNewTask();
-        yield return new WaitForSeconds(0.2f);
-        taskBox.SetActive(true); //show task to player
         timerOn = true;
+        GetNewTask();
+        yield return new WaitForSeconds(0.1f);
+        taskBox.SetActive(true); //show task to player
     }
 
     //TASK RULES
@@ -118,20 +130,31 @@ public class TaskManager : MonoBehaviour {
         taskLocation = "food";
     }
 
-    //Update for timer
-    private void Update()
+    IEnumerator LerpTimer()
     {
-        if (timerOn)
-        {
-            timerText.text = "" + timer.ToString("F2");
-            timer -= Time.deltaTime;
+        float progress = 0;
+        float speed = currentTask.timer / 500;
 
-            if (timer < 0)
+        while (progress <= 1)
+        {
+            timerBar.localScale = Vector3.Lerp(startWidth, endWidth, progress);
+            progress += Time.deltaTime * speed;
+            yield return null;
+
+            if (timerOn == false)
             {
-                //Mission failed
-                timerOn = false;
-                EventBus.Emit<GameOverEvent>(new GameOverEvent());
+                yield break;
+            }
+
+            if (progress >= 0.5)
+            {
+                iconAnimator.SetBool("Urgent", true);
             }
         }
+        timerBar.localScale = endWidth;
+        timerOn = false;
+        EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
+
     }
+
 }
