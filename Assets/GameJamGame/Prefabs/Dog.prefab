@@ -1573,6 +1573,9 @@ MonoBehaviour:
   - name: idle
     prefab: {fileID: 100000, guid: a38c473b7bf464af3b3d73cbd7482a07, type: 3}
     frameRate: 12
+  - name: walk
+    prefab: {fileID: 100000, guid: d19eb458b4ca1486aa0f819b20f82a09, type: 3}
+    frameRate: 12
 --- !u!136 &136968935670743160
 CapsuleCollider:
   m_ObjectHideFlags: 1

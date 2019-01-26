@@ -8,7 +8,7 @@ public static class IntExt {
     }
 }
 
-public class Motor : MonoBehaviour {
+public class Motor : MonoBehaviour, IMovable {
     public bool canMove = true;
     public float maxSpeed = 30f;
     public float accelRate = 10f;
@@ -52,6 +52,9 @@ public class Motor : MonoBehaviour {
         }
 
         rb.AddRelativeForce(move_delta);
+        if(move_delta == Vector3.zero) {
+            rb.velocity = Vector3.zero;
+        }
     }
 
     public void Move(Vector2Int dir)
@@ -60,6 +63,10 @@ public class Motor : MonoBehaviour {
         {
             this.dir = dir;
         }
+    }
+
+    public bool isMoving() {
+        return velocity != Vector2.zero;
     }
 
 }
