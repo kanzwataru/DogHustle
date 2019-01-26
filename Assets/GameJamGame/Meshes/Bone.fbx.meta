@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 724fc972543a4bd44b5db3b50d189cd2
+guid: b8a2acf37c0b7468fa9884192efa09cb
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -14,7 +14,12 @@ ModelImporter:
     3300000: Paint
     4300000: Paint
     2186277476908879412: ImportLogs
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Single Sided Material
+    second: {fileID: 2100000, guid: 7102d8f097a8b4d0382dbb52715a684d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0

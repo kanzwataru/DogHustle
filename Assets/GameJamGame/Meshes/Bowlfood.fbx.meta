@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: bfa297c35c9837c41962507d4af50095
+guid: 0f34da63032b04750b6ebfd0af3df065
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -20,12 +20,12 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Double Sided Material
-    second: {fileID: 2100000, guid: 7102d8f097a8b4d0382dbb52715a684d, type: 2}
+    second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Single Sided Material
-    second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
+    second: {fileID: 2100000, guid: 7102d8f097a8b4d0382dbb52715a684d, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
@@ -56,7 +56,7 @@ ModelImporter:
     isReadable: 1
   meshes:
     lODScreenPercentages: []
-    globalScale: 0.25
+    globalScale: 1
     meshCompression: 0
     addColliders: 0
     importVisibility: 1
