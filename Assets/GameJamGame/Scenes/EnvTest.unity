@@ -227,6 +227,34 @@ Prefab:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100018, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100022, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300006, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300006, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300008, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dad4e71c531874d3d8e74650f68b9bfb, type: 3}
   m_IsPrefabAsset: 0
@@ -340,6 +368,54 @@ Prefab:
       propertyPath: m_RootOrder
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100024, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100016, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 100020, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_TagString
+      value: Wall
+      objectReference: {fileID: 0}
+    - target: {fileID: 2300004, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300006, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300006, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300008, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+    - target: {fileID: 2300008, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
+      propertyPath: m_Materials.Array.data[1]
+      value: 
+      objectReference: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3eb49b58026b84e46b1055038f33696a, type: 3}
   m_IsPrefabAsset: 0
@@ -381,7 +457,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.45656818, g: 0.74856913, b: 0.8490566, a: 0}
   m_projectionMatrixMode: 1
   m_SensorSize: {x: 36, y: 24}
   m_LensShift: {x: 0, y: 0}

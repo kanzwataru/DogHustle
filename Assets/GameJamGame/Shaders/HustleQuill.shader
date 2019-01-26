@@ -5,6 +5,13 @@
         [Toggle] _EnableTransparency("Enable Transparency", Int) = 1
         [Enum(Yes,0,No,2)] _Cull("Double Sided", Int) = 2
         [Toggle] _EnableFog("Enable Fog", Int) = 0
+		
+		_MultiplyTint ("MultiplyTint", Color) = (1.0, 1.0, 1.0, 1.0)
+		_AdditiveTint ("AdditiveTint", Color) = (0.0,0.0,0.0,0.0)
+		_Opacity ("Opacity", Range(0.0, 1.0)) = 1.0
+
+		_FadeColor ("FadeColor", Color) = (0.5, 0.5, 0.5, 1.0)
+		_Fade ("Fade", Range(0.0, 1.0)) = 0.0
     }
 
     SubShader
@@ -28,6 +35,13 @@
             #pragma shader_feature _ENABLEFOG_ON
             #pragma shader_feature _ENABLETRANSPARENCY_ON
             #include "UnityCG.cginc"
+
+			fixed4 _FadeColor;
+			fixed4 _MultiplyTint;
+			fixed4 _AdditiveTint;
+
+			float _Opacity;
+			float _Fade;
 
             struct inVertex
             {
@@ -71,7 +85,7 @@
 
             fixed4 frag(v2f i) : SV_Target
             {
-                float4 col = i.color;
+                float4 col = lerp(i.color * _MultiplyTint + _AdditiveTint, _FadeColor, _Fade);
 
                 #ifdef _ENABLEFOG_ON
                 UNITY_APPLY_FOG(i.fogCoord, col);
@@ -82,6 +96,7 @@
                 const int MSAASampleCount = 8;
                 float ran = frac(52.9829189*frac(dot(pos, float2(0.06711056,0.00583715))));
                 col.a = clamp(col.a + 0.99*(ran-0.5)/float(MSAASampleCount), 0.0, 1.0);
+				col.a *= _Opacity;
                 #endif
 
                 return col;
