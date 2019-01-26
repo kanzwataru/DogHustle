@@ -15,20 +15,20 @@ public class PlayerMovement : MonoBehaviour {
         
         if (Input.GetKey(KeyCode.W))
         {
-            motor.Move(new Vector2(0, 1));
+            motor.Move(new Vector2(-1, 0));
         }
         else if (Input.GetKey(KeyCode.S))
         {
-            motor.Move(new Vector2(0, -1));
+            motor.Move(new Vector2(1, 0));
         }
 
         if (Input.GetKey(KeyCode.A))
         {
-            motor.Move(new Vector2(-1, 0));
+            motor.Move(new Vector2(0, -1));
         }
         else if (Input.GetKey(KeyCode.D))
         {
-            motor.Move(new Vector2(1, 0));
+            motor.Move(new Vector2(0, 1));
         }
 
     }
