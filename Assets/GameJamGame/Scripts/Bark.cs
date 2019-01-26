@@ -6,9 +6,10 @@ public class Bark : MonoBehaviour {
 
     //BARKING AND INTERACT WITH ENVIRONMENT
 
+    public GameObject barkEffect;
     public TaskManager taskManager;
     public float barkRate = 1.0f;
-    private float nextFire;
+    private float nextBark;
     //public AudioClip barkSound;
     private AudioSource source;
     private string action = "";
@@ -16,6 +17,24 @@ public class Bark : MonoBehaviour {
     private void Start()
     {
         source = this.GetComponent<AudioSource>();
+    }
+
+    //Effects: Sound and Visual
+    private void BarkEffects()
+    {
+        //source.PlayOneShot(barkSound);
+        StartCoroutine(BarkBlink());
+    }
+
+    IEnumerator BarkBlink()
+    {
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
     }
 
     private void OnTriggerStay(Collider other)
@@ -37,15 +56,18 @@ public class Bark : MonoBehaviour {
                 action = "back";
                 print("Interacted with Back Door");
             }
-            else if (Time.time > nextFire)
-            {
-                //source.PlayOneShot(barkSound);
-                nextFire = Time.time + barkRate;
-            }
 
             taskManager.CheckTask(action);
         }
 
     }
 
+    private void Update()
+    {
+        if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
+        {
+            nextBark = Time.time + barkRate;
+            BarkEffects();
+        }
+    }
 }
