@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 1b3303640ddc0465dbfaae09c0587f2a
+guid: 592d0257c54364c80828d506b49746e3
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
@@ -20,10 +20,10 @@ ModelImporter:
     100028: Dad_0013
     100030: Dad_0014
     100032: Dad_0015
-    100034: Dad_0016
-    100036: //RootNode
-    100038: HomeViewpoint
-    100040: Root
+    100034: //RootNode
+    100036: HomeViewpoint
+    100038: Root
+    100040: walkacyle-1080x675.jpg
     400000: Dad
     400002: Dad_0000
     400004: Dad_0001
@@ -41,10 +41,10 @@ ModelImporter:
     400028: Dad_0013
     400030: Dad_0014
     400032: Dad_0015
-    400034: Dad_0016
-    400036: //RootNode
-    400038: HomeViewpoint
-    400040: Root
+    400034: //RootNode
+    400036: HomeViewpoint
+    400038: Root
+    400040: walkacyle-1080x675.jpg
     2100000: No Name
     2300000: Dad_0000
     2300002: Dad_0001
@@ -62,7 +62,7 @@ ModelImporter:
     2300026: Dad_0013
     2300028: Dad_0014
     2300030: Dad_0015
-    2300032: Dad_0016
+    2300032: walkacyle-1080x675.jpg
     3300000: Dad_0000
     3300002: Dad_0001
     3300004: Dad_0002
@@ -79,24 +79,24 @@ ModelImporter:
     3300026: Dad_0013
     3300028: Dad_0014
     3300030: Dad_0015
-    3300032: Dad_0016
-    4300000: Dad_0000
-    4300002: Dad_0001
-    4300004: Dad_0002
-    4300006: Dad_0003
-    4300008: Dad_0004
-    4300010: Dad_0005
-    4300012: Dad_0006
-    4300014: Dad_0007
-    4300016: Dad_0008
-    4300018: Dad_0009
-    4300020: Dad_0010
-    4300022: Dad_0011
-    4300024: Dad_0012
-    4300026: Dad_0013
-    4300028: Dad_0014
-    4300030: Dad_0015
-    4300032: Dad_0016
+    3300032: walkacyle-1080x675.jpg
+    4300000: walkacyle-1080x675.jpg
+    4300002: Dad_0000
+    4300004: Dad_0001
+    4300006: Dad_0002
+    4300008: Dad_0003
+    4300010: Dad_0004
+    4300012: Dad_0005
+    4300014: Dad_0006
+    4300016: Dad_0007
+    4300018: Dad_0008
+    4300020: Dad_0009
+    4300022: Dad_0010
+    4300024: Dad_0011
+    4300026: Dad_0012
+    4300028: Dad_0013
+    4300030: Dad_0014
+    4300032: Dad_0015
     7400000: anim_stack
     9500000: //RootNode
     2186277476908879412: ImportLogs

@@ -16,7 +16,7 @@ public class AIHuman : MonoBehaviour, IMovable {
 	
 	Transform currentGoalXform;
 	AIGoal    currentGoal;
-	EAIState  state = EAIState.Idling;
+	EAIState  state = EAIState.Moving;
 
 	float idleTimer = 0.0f;
 
@@ -32,7 +32,7 @@ public class AIHuman : MonoBehaviour, IMovable {
 		MoveToNextGoal();
 	}
 	
-	void FixedUpdate () {
+	void Update () {
 		switch(state) {
 		case EAIState.Idling:
 			idleTimer -= Time.deltaTime;
@@ -43,7 +43,6 @@ public class AIHuman : MonoBehaviour, IMovable {
 		break;
 
 		case EAIState.Moving:
-			Debug.Log(agent.remainingDistance);
 			if(agent.remainingDistance <= goalThreshold) {
 				state = EAIState.Idling;
 			}
