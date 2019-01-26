@@ -6,14 +6,17 @@ using UnityEngine.AI;
 public class AIHuman : MonoBehaviour, IMovable {
 	enum EAIState {
 		Moving,
-		Idling
+		Idling,
+		Turning
 	}
 
 	public float goalThreshold = 0.02f;
+	public float turnSpeed = 0.3f;
 
 	NavMeshAgent agent;
 	Transform goalsRoot;
-	
+	Transform xform;
+
 	Transform currentGoalXform;
 	AIGoal    currentGoal;
 	EAIState  state = EAIState.Moving;
@@ -27,6 +30,7 @@ public class AIHuman : MonoBehaviour, IMovable {
 	void Start () {
 		goalsRoot = GameObject.Find("AIGoals").GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();
+		xform = transform;
 
 		DecideGoals();
 		MoveToNextGoal();
@@ -44,8 +48,14 @@ public class AIHuman : MonoBehaviour, IMovable {
 
 		case EAIState.Moving:
 			if(agent.remainingDistance <= goalThreshold) {
-				state = EAIState.Idling;
+				state = EAIState.Turning;
 			}
+		break;
+
+		case EAIState.Turning:
+			xform.rotation = Quaternion.Lerp(xform.rotation, currentGoalXform.rotation, turnSpeed * Time.deltaTime);
+			if(xform.rotation == currentGoalXform.rotation)
+				state = EAIState.Idling;
 		break;
 		}
 	}

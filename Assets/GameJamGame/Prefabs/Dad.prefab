@@ -1460,6 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   goalThreshold: 0.02
+  turnSpeed: 5
 --- !u!114 &114514550936478062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1476,7 +1477,7 @@ MonoBehaviour:
     prefab: {fileID: 100036, guid: c8bb3cdc56e8d43269cb54ab31eefd3f, type: 3}
     frameRate: 12
   - name: walk
-    prefab: {fileID: 1298907146176298, guid: d284d2a019dbb4448b2fce94581c57d8, type: 2}
+    prefab: {fileID: 100034, guid: 592d0257c54364c80828d506b49746e3, type: 3}
     frameRate: 12
 --- !u!114 &114684763439137426
 MonoBehaviour:
