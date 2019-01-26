@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class QuillAnimation : MonoBehaviour {
     public int frameRate = 12;
@@ -8,6 +9,8 @@ public class QuillAnimation : MonoBehaviour {
     private GameObject[][] _layersFrames;
     private int _overallFrameCount;
     private int _currentFrame;
+
+    private UnityEvent onEndEvent = new UnityEvent();
 
 	// Use this for initialization
 	void Start () {
@@ -36,13 +39,15 @@ public class QuillAnimation : MonoBehaviour {
                 _overallFrameCount = layer.Length;
         }
 	}
-	
+
 	// Update is called once per frame
 	void Update () {
         if(QuillAnimSystem.instance.ShouldUpdate(frameRate)) {
             int next_frame = _currentFrame + 1;
-            if(next_frame == _overallFrameCount)
+            if(next_frame == _overallFrameCount) {
                 next_frame = 0;
+                onEndEvent.Invoke();
+            }
 
             foreach(var layer in _layersFrames) {
                 if(_currentFrame < layer.Length)
@@ -56,4 +61,23 @@ public class QuillAnimation : MonoBehaviour {
             _currentFrame = next_frame;
         }
 	}
+
+    public void Reset() {
+        if(_layersFrames == null)
+            return;
+
+        foreach(var layer in _layersFrames) {
+            layer[_currentFrame].SetActive(false);
+            layer[0].SetActive(true);
+        }
+        _currentFrame = 0;
+    }
+
+    public void AddOnEndHandler(UnityAction action) {
+        onEndEvent.AddListener(action);
+    }
+
+    public void RemoveOnEndHandler(UnityAction action) {
+        onEndEvent.RemoveListener(action);
+    }
 }
