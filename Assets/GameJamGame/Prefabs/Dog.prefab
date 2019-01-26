@@ -223,6 +223,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4504075079810790}
   - component: {fileID: 114828641413127634}
+  - component: {fileID: 114937223683410002}
   - component: {fileID: 136968935670743160}
   m_Layer: 0
   m_Name: rotation_root
@@ -401,13 +402,13 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774535533269510}
-  m_LocalRotation: {x: -0.345597, y: -0.5272966, z: 0.24772175, w: -0.73563236}
-  m_LocalPosition: {x: -6.593788, y: 10.85, z: -1.712862}
+  m_LocalRotation: {x: -0.36865985, y: -0.45100525, z: 0.21188037, w: -0.78472346}
+  m_LocalPosition: {x: -6.41, y: 10.85, z: -3.34}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4175631365872066}
   m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 50.328003, y: -108.73501, z: 0}
+  m_LocalEulerAnglesHint: {x: 50.328003, y: -300.225, z: 0}
 --- !u!4 &4073977944320922
 Transform:
   m_ObjectHideFlags: 1
@@ -1408,8 +1409,8 @@ Rigidbody:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729036424177582}
   serializedVersion: 2
-  m_Mass: 3
-  m_Drag: 5
+  m_Mass: 5
+  m_Drag: 10
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 0
@@ -1541,10 +1542,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canMove: 1
-  maxSpeed: 200
+  maxSpeed: 500
   accelRate: 0.4
-  decelRate: 0.2
-  rotateRate: 0.5
+  decelRate: 0.1
+  rotateRate: 0.25
 --- !u!114 &114702721813677730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1576,6 +1577,17 @@ MonoBehaviour:
   - name: walk
     prefab: {fileID: 100000, guid: d19eb458b4ca1486aa0f819b20f82a09, type: 3}
     frameRate: 12
+--- !u!114 &114937223683410002
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1775621772965484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf652f1996b434bc8a6073b6e067490d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136968935670743160
 CapsuleCollider:
   m_ObjectHideFlags: 1
