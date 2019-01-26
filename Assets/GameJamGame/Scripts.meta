@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 73f81ed0d1098444b85f436b1dc0f31a
+=======
+<<<<<<< HEAD
+guid: 3a7cb018bdf403049886efecd746b2e4
+=======
+guid: 73f81ed0d1098444b85f436b1dc0f31a
+>>>>>>> 5364b2aa0509c8d252f5a4d20129a979a0f7a0fc
+>>>>>>> nathan
 folderAsset: yes
 DefaultImporter:
   externalObjects: {}

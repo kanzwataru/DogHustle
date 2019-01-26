@@ -1,5 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD
 guid: 8d1e660674977436485f1bf0c9ab4dc3
+=======
+<<<<<<< HEAD
+guid: 2d6571eb89af90c41ba2fb58e982c2af
+=======
+guid: 8d1e660674977436485f1bf0c9ab4dc3
+>>>>>>> 5364b2aa0509c8d252f5a4d20129a979a0f7a0fc
+>>>>>>> nathan
 TextScriptImporter:
   externalObjects: {}
   userData: 
