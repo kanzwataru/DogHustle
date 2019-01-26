@@ -8,7 +8,7 @@ public class QuillAnimation : MonoBehaviour {
 
     private GameObject[][] _layersFrames;
     private int _overallFrameCount;
-    private int _currentFrame;
+    private int _currentFrame = 0;
 
     private UnityEvent onEndEvent = new UnityEvent();
 
@@ -74,6 +74,7 @@ public class QuillAnimation : MonoBehaviour {
             return;
 
         foreach(var layer in _layersFrames) {
+            Debug.Log(_currentFrame);
             layer[_currentFrame].SetActive(false);
             layer[0].SetActive(true);
         }

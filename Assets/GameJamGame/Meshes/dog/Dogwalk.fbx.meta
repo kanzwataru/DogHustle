@@ -13,6 +13,7 @@ ModelImporter:
     100014: Dogwalk_0005
     100016: Dogwalk_0006
     100018: Root
+    100020: HomeViewpoint
     400000: Dogwalk
     400002: //RootNode
     400004: Dogwalk_0000
@@ -23,6 +24,7 @@ ModelImporter:
     400014: Dogwalk_0005
     400016: Dogwalk_0006
     400018: Root
+    400020: HomeViewpoint
     2100000: No Name
     2300000: Dogwalk_0000
     2300002: Dogwalk_0001
