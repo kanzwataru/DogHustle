@@ -49,7 +49,7 @@ public class TaskManager : MonoBehaviour {
     void Start () {
 
         //set-up transforms
-        backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
+        //backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
         waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>().position;
         foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
 
@@ -61,7 +61,7 @@ public class TaskManager : MonoBehaviour {
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
 
         //Fill tasks arraylist:
-        tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
+        //tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
         tasks.Add(new Task(foodImage, 20f, EatAt, foodBowlPos));
         tasks.Add(new Task(waterImage, 20f, DrinkAt, waterBowlPos));
 

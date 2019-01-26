@@ -6,21 +6,61 @@ public class Bark : MonoBehaviour {
 
     //BARKING AND INTERACT WITH ENVIRONMENT
 
+    public GameObject barkEffect;
     public TaskManager taskManager;
-    public float barkRate = 1.0f;
-    private float nextFire;
-    //public AudioClip barkSound;
+    public float barkRate = 2f;
+    private float nextBark;
+    public AudioClip barkSound;
+    public AudioClip drinkSound1;
+    public AudioClip drinkSound2;
     private AudioSource source;
     private string action = "";
+    private bool inTriggerZone = false; //for free barking
 
     private void Start()
     {
         source = this.GetComponent<AudioSource>();
     }
 
+    //Effects: Sound and Visual
+    private void BarkEffects()
+    {
+        source.pitch = Random.Range(0.95f, 1.05f);
+        source.PlayOneShot(barkSound);
+        StartCoroutine(BarkBlink());
+    }
+
+    private void DrinkWaterSound()
+    {
+        if (Random.Range(0,2) == 0)
+        {
+            source.PlayOneShot(drinkSound1);
+        }
+        else
+        {
+            source.PlayOneShot(drinkSound2);
+        }
+    }
+
+    IEnumerator BarkBlink()
+    {
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+
+    }
+
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark)
         {
             if (other.gameObject.tag == "FoodBowl")
             {
@@ -29,6 +69,7 @@ public class Bark : MonoBehaviour {
             }
             else if (other.gameObject.tag == "WaterBowl")
             {
+                DrinkWaterSound();
                 action = "water";
                 print("Interacted with Water Bowl");
             }
@@ -37,15 +78,32 @@ public class Bark : MonoBehaviour {
                 action = "back";
                 print("Interacted with Back Door");
             }
-            else if (Time.time > nextFire)
-            {
-                //source.PlayOneShot(barkSound);
-                nextFire = Time.time + barkRate;
-            }
 
+            nextBark = Time.time + barkRate;
             taskManager.CheckTask(action);
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        inTriggerZone = true;
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        inTriggerZone = false;
+    }
+
+    private void Update()
+    {
+        if (!inTriggerZone)
+        {
+            if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
+            {
+                nextBark = Time.time + barkRate;
+                BarkEffects();
+            }
         }
 
     }
-
 }
