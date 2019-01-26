@@ -21,20 +21,30 @@ public class TaskManager : MonoBehaviour {
 
     //TIMED TASKS THE PLAYER MUST DO
 
-    public GameObject taskBox;
+    private GameObject taskBox;
+    private Text taskText;
+    private Text timerText;
 
-    public Transform doorTransform;
+    private Vector3 backDoorPos;
+    private Vector3 waterBowlPos;
+    private Vector3 foodBowlPos;
 
     private List<Task> tasks = new List<Task>();
-    private Text taskText;
-    private float timer = 0.0f;
+    private float timer;
     private int task;
-    private bool completed = false;
+    private bool timerOn = true;
 
     void Start () {
 
-        //Get taskText:
-        taskText = taskBox.GetComponentInChildren<Text>();
+        //set-up transforms
+        backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
+        waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>().position;
+        foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
+
+        //Get UI:
+        taskText = GameObject.FindGameObjectWithTag("TaskText").GetComponent<Text>();
+        timerText = GameObject.FindGameObjectWithTag("TimerText").GetComponent<Text>();
+        taskBox = GameObject.FindGameObjectWithTag("TaskBox");
 
         //Fill tasks arraylist:
         tasks.Add(new Task("Bark at front door", 15f, BarkAt));
@@ -47,29 +57,30 @@ public class TaskManager : MonoBehaviour {
     public void GetNewTask()
     {
         Task currentTask = TaskRandomizer();
-        currentTask.function(doorTransform.position);
-        //start counting up to task timer
+        taskBox.SetActive(true); //show task to player
+        taskText.text = tasks[task].description; //set task text
+        currentTask.function(backDoorPos); //set current task rules
+        timer = currentTask.timer; //start new timer
     }
 
     //Randomly picks a task from list
     private Task TaskRandomizer()
     {
         task = Random.Range(0, tasks.Count);
-        taskText.text = tasks[task].description;
-        print(tasks[task].description);
         return tasks[task];
     }
 
     private void TaskComplete()
     {
-        completed = true;
+        timerOn = false;
+        taskBox.SetActive(false);
         StartCoroutine(TaskDelay());
     }
 
     private IEnumerator TaskDelay()
     {
         yield return new WaitForSeconds(2f);
-        completed = false;
+        timerOn = true;
         GetNewTask();
     }
 
@@ -90,5 +101,20 @@ public class TaskManager : MonoBehaviour {
 
     }
 
-	
+    //Update for timer
+    private void Update()
+    {
+        if (timerOn)
+        {
+            timerText.text = "" + timer.ToString("F2");
+            timer -= Time.deltaTime;
+
+            if (timer < 0)
+            {
+                //Mission failed
+                timerOn = false;
+            }
+        }
+    }
+
 }
