@@ -61,6 +61,12 @@ public class AnimState : MonoBehaviour {
 		_instantiatedAnims[current].qanim.Reset();
 	}
 
+	public void EnsureState(string name) {
+		if(current != name) {
+			SwitchAnim(name);
+		}
+	}
+
 	public void PlayOnce(string name) {
 		if(loopingAnim != null)
 			ReturnToLoop();
@@ -81,10 +87,5 @@ public class AnimState : MonoBehaviour {
 
 		SwitchAnim(loopingAnim, false);
 		loopingAnim = null;
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
 	}
 }
