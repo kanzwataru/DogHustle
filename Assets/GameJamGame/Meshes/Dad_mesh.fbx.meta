@@ -332,6 +332,60 @@ ModelImporter:
     100652: Dad:Dad_SpineTopIKCG2
     100654: Dad:Dad_SpineTopJ
     100656: //RootNode
+    100658: dad
+    100660: Dad_MainC
+    100662: Dad_MainHipC
+    100664: Dad_MainHipCG
+    100666: Dad_ROOTJ
+    100668: Dad_SH_HeadJ
+    100670: Dad_SH_HeadTipJ
+    100672: Dad_SH_JawJ
+    100674: Dad_SH_JawTipJ
+    100676: Dad_SH_lAnkleJ
+    100678: Dad_SH_lBallJ
+    100680: Dad_SH_lClavicleJ
+    100682: Dad_SH_lElbowJ
+    100684: Dad_SH_lEyeJ
+    100686: Dad_SH_lFinger1J1
+    100688: Dad_SH_lFinger1J2
+    100690: Dad_SH_lFinger1J3
+    100692: Dad_SH_lFinger1JTip
+    100694: Dad_SH_lForearmJ
+    100696: Dad_SH_lHipJ
+    100698: Dad_SH_lKneeJ
+    100700: Dad_SH_lPalmJ
+    100702: Dad_SH_lShoulderJ
+    100704: Dad_SH_lThumbJ1
+    100706: Dad_SH_lThumbJ2
+    100708: Dad_SH_lThumbJ3
+    100710: Dad_SH_lThumbJTip
+    100712: Dad_SH_lToeJ
+    100714: Dad_SH_lWristJ
+    100716: Dad_SH_Neck01J
+    100718: Dad_SH_rAnkleJ
+    100720: Dad_SH_rBallJ
+    100722: Dad_SH_rClavicleJ
+    100724: Dad_SH_rElbowJ
+    100726: Dad_SH_rEyeJ
+    100728: Dad_SH_rFinger1J1
+    100730: Dad_SH_rFinger1J2
+    100732: Dad_SH_rFinger1J3
+    100734: Dad_SH_rFinger1JTip
+    100736: Dad_SH_rForearmJ
+    100738: Dad_SH_rHipJ
+    100740: Dad_SH_rKneeJ
+    100742: Dad_SH_ROOTJ
+    100744: Dad_SH_rPalmJ
+    100746: Dad_SH_rShoulderJ
+    100748: Dad_SH_rThumbJ1
+    100750: Dad_SH_rThumbJ2
+    100752: Dad_SH_rThumbJ3
+    100754: Dad_SH_rThumbJTip
+    100756: Dad_SH_rToeJ
+    100758: Dad_SH_rWristJ
+    100760: Dad_SH_Spine01J
+    100762: Dad_SH_Spine02J
+    100764: Dad_SH_SpineTopJ
     400000: Dad:Dad
     400002: Dad:dad
     400004: Dad:Dad_ExtraNodes
@@ -661,10 +715,67 @@ ModelImporter:
     400652: Dad:Dad_SpineTopIKCG2
     400654: Dad:Dad_SpineTopJ
     400656: //RootNode
+    400658: dad
+    400660: Dad_MainC
+    400662: Dad_MainHipC
+    400664: Dad_MainHipCG
+    400666: Dad_ROOTJ
+    400668: Dad_SH_HeadJ
+    400670: Dad_SH_HeadTipJ
+    400672: Dad_SH_JawJ
+    400674: Dad_SH_JawTipJ
+    400676: Dad_SH_lAnkleJ
+    400678: Dad_SH_lBallJ
+    400680: Dad_SH_lClavicleJ
+    400682: Dad_SH_lElbowJ
+    400684: Dad_SH_lEyeJ
+    400686: Dad_SH_lFinger1J1
+    400688: Dad_SH_lFinger1J2
+    400690: Dad_SH_lFinger1J3
+    400692: Dad_SH_lFinger1JTip
+    400694: Dad_SH_lForearmJ
+    400696: Dad_SH_lHipJ
+    400698: Dad_SH_lKneeJ
+    400700: Dad_SH_lPalmJ
+    400702: Dad_SH_lShoulderJ
+    400704: Dad_SH_lThumbJ1
+    400706: Dad_SH_lThumbJ2
+    400708: Dad_SH_lThumbJ3
+    400710: Dad_SH_lThumbJTip
+    400712: Dad_SH_lToeJ
+    400714: Dad_SH_lWristJ
+    400716: Dad_SH_Neck01J
+    400718: Dad_SH_rAnkleJ
+    400720: Dad_SH_rBallJ
+    400722: Dad_SH_rClavicleJ
+    400724: Dad_SH_rElbowJ
+    400726: Dad_SH_rEyeJ
+    400728: Dad_SH_rFinger1J1
+    400730: Dad_SH_rFinger1J2
+    400732: Dad_SH_rFinger1J3
+    400734: Dad_SH_rFinger1JTip
+    400736: Dad_SH_rForearmJ
+    400738: Dad_SH_rHipJ
+    400740: Dad_SH_rKneeJ
+    400742: Dad_SH_ROOTJ
+    400744: Dad_SH_rPalmJ
+    400746: Dad_SH_rShoulderJ
+    400748: Dad_SH_rThumbJ1
+    400750: Dad_SH_rThumbJ2
+    400752: Dad_SH_rThumbJ3
+    400754: Dad_SH_rThumbJTip
+    400756: Dad_SH_rToeJ
+    400758: Dad_SH_rWristJ
+    400760: Dad_SH_Spine01J
+    400762: Dad_SH_Spine02J
+    400764: Dad_SH_SpineTopJ
     2100000: Dad_Wataru_vertexColour_Wataru_vertexColour_newnew
+    2100002: Wataru_vertexColour_Wataru_vertexColour_newnew
     4300000: Dad:dad
+    4300002: dad
     9500000: //RootNode
     13700000: Dad:dad
+    13700002: dad
   externalObjects: {}
   materials:
     importMaterials: 1

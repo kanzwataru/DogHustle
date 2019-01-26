@@ -329,6 +329,59 @@ ModelImporter:
     100646: Dad:Dad_SpineTopIKCG2
     100648: Dad:Dad_SpineTopJ
     100650: //RootNode
+    100652: Dad_MainC
+    100654: Dad_MainHipC
+    100656: Dad_MainHipCG
+    100658: Dad_ROOTJ
+    100660: Dad_SH_HeadJ
+    100662: Dad_SH_HeadTipJ
+    100664: Dad_SH_JawJ
+    100666: Dad_SH_JawTipJ
+    100668: Dad_SH_lAnkleJ
+    100670: Dad_SH_lBallJ
+    100672: Dad_SH_lClavicleJ
+    100674: Dad_SH_lElbowJ
+    100676: Dad_SH_lEyeJ
+    100678: Dad_SH_lFinger1J1
+    100680: Dad_SH_lFinger1J2
+    100682: Dad_SH_lFinger1J3
+    100684: Dad_SH_lFinger1JTip
+    100686: Dad_SH_lForearmJ
+    100688: Dad_SH_lHipJ
+    100690: Dad_SH_lKneeJ
+    100692: Dad_SH_lPalmJ
+    100694: Dad_SH_lShoulderJ
+    100696: Dad_SH_lThumbJ1
+    100698: Dad_SH_lThumbJ2
+    100700: Dad_SH_lThumbJ3
+    100702: Dad_SH_lThumbJTip
+    100704: Dad_SH_lToeJ
+    100706: Dad_SH_lWristJ
+    100708: Dad_SH_Neck01J
+    100710: Dad_SH_rAnkleJ
+    100712: Dad_SH_rBallJ
+    100714: Dad_SH_rClavicleJ
+    100716: Dad_SH_rElbowJ
+    100718: Dad_SH_rEyeJ
+    100720: Dad_SH_rFinger1J1
+    100722: Dad_SH_rFinger1J2
+    100724: Dad_SH_rFinger1J3
+    100726: Dad_SH_rFinger1JTip
+    100728: Dad_SH_rForearmJ
+    100730: Dad_SH_rHipJ
+    100732: Dad_SH_rKneeJ
+    100734: Dad_SH_ROOTJ
+    100736: Dad_SH_rPalmJ
+    100738: Dad_SH_rShoulderJ
+    100740: Dad_SH_rThumbJ1
+    100742: Dad_SH_rThumbJ2
+    100744: Dad_SH_rThumbJ3
+    100746: Dad_SH_rThumbJTip
+    100748: Dad_SH_rToeJ
+    100750: Dad_SH_rWristJ
+    100752: Dad_SH_Spine01J
+    100754: Dad_SH_Spine02J
+    100756: Dad_SH_SpineTopJ
     400000: Dad:Dad_ExtraNodes
     400002: Dad:Dad_HeadC
     400004: Dad:Dad_HeadCG
@@ -655,6 +708,59 @@ ModelImporter:
     400646: Dad:Dad_SpineTopIKCG2
     400648: Dad:Dad_SpineTopJ
     400650: //RootNode
+    400652: Dad_MainC
+    400654: Dad_MainHipC
+    400656: Dad_MainHipCG
+    400658: Dad_ROOTJ
+    400660: Dad_SH_HeadJ
+    400662: Dad_SH_HeadTipJ
+    400664: Dad_SH_JawJ
+    400666: Dad_SH_JawTipJ
+    400668: Dad_SH_lAnkleJ
+    400670: Dad_SH_lBallJ
+    400672: Dad_SH_lClavicleJ
+    400674: Dad_SH_lElbowJ
+    400676: Dad_SH_lEyeJ
+    400678: Dad_SH_lFinger1J1
+    400680: Dad_SH_lFinger1J2
+    400682: Dad_SH_lFinger1J3
+    400684: Dad_SH_lFinger1JTip
+    400686: Dad_SH_lForearmJ
+    400688: Dad_SH_lHipJ
+    400690: Dad_SH_lKneeJ
+    400692: Dad_SH_lPalmJ
+    400694: Dad_SH_lShoulderJ
+    400696: Dad_SH_lThumbJ1
+    400698: Dad_SH_lThumbJ2
+    400700: Dad_SH_lThumbJ3
+    400702: Dad_SH_lThumbJTip
+    400704: Dad_SH_lToeJ
+    400706: Dad_SH_lWristJ
+    400708: Dad_SH_Neck01J
+    400710: Dad_SH_rAnkleJ
+    400712: Dad_SH_rBallJ
+    400714: Dad_SH_rClavicleJ
+    400716: Dad_SH_rElbowJ
+    400718: Dad_SH_rEyeJ
+    400720: Dad_SH_rFinger1J1
+    400722: Dad_SH_rFinger1J2
+    400724: Dad_SH_rFinger1J3
+    400726: Dad_SH_rFinger1JTip
+    400728: Dad_SH_rForearmJ
+    400730: Dad_SH_rHipJ
+    400732: Dad_SH_rKneeJ
+    400734: Dad_SH_ROOTJ
+    400736: Dad_SH_rPalmJ
+    400738: Dad_SH_rShoulderJ
+    400740: Dad_SH_rThumbJ1
+    400742: Dad_SH_rThumbJ2
+    400744: Dad_SH_rThumbJ3
+    400746: Dad_SH_rThumbJTip
+    400748: Dad_SH_rToeJ
+    400750: Dad_SH_rWristJ
+    400752: Dad_SH_Spine01J
+    400754: Dad_SH_Spine02J
+    400756: Dad_SH_SpineTopJ
     7400000: Take 001
     9500000: //RootNode
     2186277476908879412: ImportLogs
@@ -669,7 +775,7 @@ ModelImporter:
     bakeSimulation: 0
     resampleCurves: 1
     optimizeGameObjects: 0
-    motionNodeName: 
+    motionNodeName: Dad_MainC/Dad_SH_ROOTJ
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
@@ -685,7 +791,35 @@ ModelImporter:
     animationWrapMode: 0
     extraExposedTransformPaths: []
     extraUserProperties: []
-    clipAnimations: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Take 001
+      takeName: Take 001
+      firstFrame: 1
+      lastFrame: 44
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
     isReadable: 1
   meshes:
     lODScreenPercentages: []
@@ -717,7 +851,7 @@ ModelImporter:
     tangentImportMode: 3
     normalCalculationMode: 4
   importAnimation: 1
-  copyAvatar: 0
+  copyAvatar: 1
   humanDescription:
     serializedVersion: 2
     human: []
@@ -734,7 +868,8 @@ ModelImporter:
     hasTranslationDoF: 0
     hasExtraRoot: 0
     skeletonHasParents: 1
-  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  lastHumanDescriptionAvatarSource: {fileID: 9000000, guid: 7d3867acea2e04fabbe23850a1c8d73f,
+    type: 3}
   animationType: 2
   humanoidOversampling: 1
   additionalBone: 0
