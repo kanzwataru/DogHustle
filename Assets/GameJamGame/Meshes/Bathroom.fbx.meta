@@ -29,6 +29,7 @@ ModelImporter:
     100044: Toilet 1
     100046: Tub
     100048: Tub 1
+    100050: Hallway
     400000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
     400002: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
       1
@@ -55,6 +56,7 @@ ModelImporter:
     400044: Toilet 1
     400046: Tub
     400048: Tub 1
+    400050: Hallway
     2100000: Double Sided Material
     2100002: Single Sided Material
     2100004: No Name
@@ -66,6 +68,7 @@ ModelImporter:
     2300010: Sink
     2300012: Toilet
     2300014: Tub
+    2300016: Hallway
     3300000: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
     3300002: Bathroomfloor
     3300004: Bathroomwall1
@@ -74,6 +77,7 @@ ModelImporter:
     3300010: Sink
     3300012: Toilet
     3300014: Tub
+    3300016: Hallway
     4300000: Sink
     4300002: Tub
     4300004: Toilet
@@ -82,6 +86,7 @@ ModelImporter:
     4300010: bathroomwall3
     4300012: Bathroomfloor
     4300014: 41c176802ad08f7fb61d3722630b52ca--retro-bathroom-remodel-retro-bathrooms.jpg
+    4300016: Hallway
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
