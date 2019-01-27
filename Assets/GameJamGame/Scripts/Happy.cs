@@ -15,9 +15,12 @@ public class Happy : MonoBehaviour {
     private bool isHappy = false;
     private bool isPaused = false;
 
+    private GameObject bubble;
+
     private void Start()
     {
         EventBus.AddListener<PauseEvent>(HandleEvent);
+        bubble = transform.GetChild(0).gameObject;
     }
 
     private void OnTriggerStay(Collider other)
@@ -48,6 +51,7 @@ public class Happy : MonoBehaviour {
         happyStatus = 0; //reset happy status
         isHappy = false;
         EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
+        bubble.SetActive(!isHappy);
     }
 
     private void Update()
@@ -56,6 +60,7 @@ public class Happy : MonoBehaviour {
         {
             isHappy = true;
             EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
+            bubble.SetActive(!isHappy);
             
             happyCounter++;
             StartCoroutine(HappyToSad());
