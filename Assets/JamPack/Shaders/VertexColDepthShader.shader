@@ -3,8 +3,8 @@ Shader "Custom/VertexColDepthShader"
 	Properties
 	{
 		//_MainTex ("Texture", 2D) = "white" {}
-		_Contrast ("Contrast", Range(1, 500)) = 200.0
-		_Factor ("Factor", Range(0.01, 10.0)) = 5.0
+		_Contrast ("Contrast", Range(1, 500)) = 300.0
+		_Factor ("Factor", Range(0.01, 10.0)) = 7.0
 	}
 	SubShader
 	{
