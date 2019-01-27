@@ -21,6 +21,9 @@ public class AIHuman : MonoBehaviour, IMovable {
 	AIGoal    currentGoal;
 	EAIState  state = EAIState.Moving;
 
+	Vector3 lastPosition;
+	int destuckCounter = 0;
+
 	float idleTimer = 0.0f;
 
 	public bool isMoving() {
@@ -58,6 +61,22 @@ public class AIHuman : MonoBehaviour, IMovable {
                     {
                         state = EAIState.Turning;
                     }
+					else {
+						if(lastPosition == xform.position)
+							destuckCounter++;
+						else {
+							destuckCounter = 0;
+						}
+						
+						if(destuckCounter > 2) {
+							DecideGoals();
+							MoveToNextGoal();
+
+							destuckCounter = 0;
+						}
+					}
+
+					lastPosition = xform.position;
                 }
 		break;
 
@@ -88,7 +107,7 @@ public class AIHuman : MonoBehaviour, IMovable {
 				valid = false;
 			
 			/* don't go there if there is already soemone */
-			var nearby = Physics.OverlapSphere(goal.position, 2f);
+			var nearby = Physics.OverlapSphere(goal.position, 1f);
 			foreach(var collider in nearby) {
 				if(collider.GetComponent<AIHuman>() != null) {
 					valid = false;

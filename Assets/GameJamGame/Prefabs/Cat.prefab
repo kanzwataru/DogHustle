@@ -317,6 +317,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4841157494928528}
   - component: {fileID: 114434133917204924}
+  - component: {fileID: 114977439964688900}
   m_Layer: 0
   m_Name: rotation_root
   m_TagString: Untagged
@@ -1675,8 +1676,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   goalThreshold: 0.02
   turnSpeed: 0.3
-  runSpeed: 12
-  walkSpeed: 4
+  runSpeed: 15
+  walkSpeed: 3
 --- !u!114 &114434133917204924
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1691,10 +1692,22 @@ MonoBehaviour:
   animations:
   - name: walk
     prefab: {fileID: 1611094991276626, guid: 759a01b0f9ee84acd88c47a13097a79d, type: 2}
-    frameRate: 12
+    frameRate: 8
   - name: run
-    prefab: {fileID: 1115583610392938, guid: 2a0b6dbcd1c3740dea54906c03b0bea5, type: 2}
-    frameRate: 12
+    prefab: {fileID: 1611094991276626, guid: 759a01b0f9ee84acd88c47a13097a79d, type: 2}
+    frameRate: 48
+--- !u!114 &114977439964688900
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1767250283832248}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cf652f1996b434bc8a6073b6e067490d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happy: 0
 --- !u!135 &135143951066471864
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -1717,9 +1730,9 @@ NavMeshAgent:
   m_AgentTypeID: -1372625422
   m_Radius: 0.67
   m_Speed: 4
-  m_Acceleration: 8
+  m_Acceleration: 300
   avoidancePriority: 50
-  m_AngularSpeed: 240
+  m_AngularSpeed: 400
   m_StoppingDistance: 0
   m_AutoTraverseOffMeshLink: 1
   m_AutoBraking: 1

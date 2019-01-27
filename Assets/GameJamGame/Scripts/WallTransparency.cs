@@ -69,7 +69,7 @@ public class WallTransparency : MonoBehaviour {
 			wall.obstructed = false;
 		}
 
-		var hits = Physics.RaycastAll(xform.position, dir, dist, wallLayerMask);
+		var hits = Physics.SphereCastAll(xform.position, 1f, dir, dist, wallLayerMask);
 		foreach(var hit in hits) {
 			if(walls.ContainsKey(hit.transform))
 				walls[hit.transform].obstructed = true;

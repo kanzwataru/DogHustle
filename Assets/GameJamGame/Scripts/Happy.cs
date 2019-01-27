@@ -9,7 +9,6 @@ public class Happy : MonoBehaviour {
     //Maxing out happiness changes human state and happy counter increases
     //After 10 seconds, state is reset and happy status returns to zero
     public static int happyCounter = 0; /* would be better to have this in a GameManager of some kind, instead of static */
-    public Material bubbleMat;
     public Material personMat;
 
     public float max = 10f;
@@ -19,12 +18,13 @@ public class Happy : MonoBehaviour {
     private bool isPaused = false;
 
     private GameObject bubble;
-    private float bubbleOpacity = 1.0f;
+    private GameObject cheer;
 
     private void Start()
     {
         EventBus.AddListener<PauseEvent>(HandleEvent);
         bubble = transform.GetChild(0).gameObject;
+        cheer = transform.GetChild(1).gameObject;
 
         EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
     }
@@ -36,7 +36,8 @@ public class Happy : MonoBehaviour {
             if (happyStatus < max && !isPaused)
             {
                 happyStatus += Time.deltaTime;
-                bubbleOpacity -= Time.deltaTime;
+                bubble.SetActive(false);
+                cheer.SetActive(true);
             }
         }
     }
@@ -45,7 +46,9 @@ public class Happy : MonoBehaviour {
     {
         if (other.gameObject.tag == "Player")
         {
-            bubbleOpacity = 1.0f;
+            if(happyStatus < max && !isPaused)
+                bubble.SetActive(true);
+                cheer.SetActive(false);
         }
     }
 
@@ -76,9 +79,10 @@ public class Happy : MonoBehaviour {
             
             happyCounter++;
             StartCoroutine(HappyToSad());
+
+            cheer.SetActive(false);
         }
 
-        bubbleMat.SetFloat("_Opacity", bubbleOpacity);
         if(personMat != null)
             personMat.SetFloat("_Fade", Mathf.Lerp(0.6f, 0.0f, UtilFuncs.remap(happyStatus, 0.0f, max, 0.0f, 1.0f)));
     }
