@@ -652,7 +652,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1784015537091668}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -0, y: 0, z: 2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4051300725481482}
@@ -899,7 +899,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 20
+  field of view: 25
   orthographic: 0
   orthographic size: 5.04
   m_Depth: -1
@@ -1932,8 +1932,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55799a19b8b9948f8800f8dcdfcb1417, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveAmount: {x: 0, y: 0, z: 4}
-  moveSpeed: 3
+  moveAmount: {x: 0, y: 0, z: 2}
+  moveSpeed: 1.5
 --- !u!114 &114303331404560952
 MonoBehaviour:
   m_ObjectHideFlags: 1

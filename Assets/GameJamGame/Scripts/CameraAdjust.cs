@@ -31,6 +31,6 @@ public class CameraAdjust : MonoBehaviour {
 				moveBackPercent -= moveSpeed * Time.deltaTime;
 		}
 
-		xform.localPosition = Vector3.Lerp(defaultPos, targetPos, Mathf.Clamp(moveBackPercent, 0.0f, 1.0f));
+		xform.localPosition = VectorEase.Ease(EasingFunction.EaseInOutSine, defaultPos, targetPos, Mathf.Clamp(moveBackPercent, 0.0f, 1.0f));
 	}
 }
