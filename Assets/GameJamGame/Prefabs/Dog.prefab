@@ -455,7 +455,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1729036424177582}
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: 3.606212, y: 1.4, z: 0.7871379}
+  m_LocalPosition: {x: 3.606212, y: 1.4, z: -4.09}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4504075079810790}
@@ -1568,8 +1568,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 42ad2ad79293d07479c898f7506ecd8a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  barkEffect: {fileID: 0}
   taskManager: {fileID: 0}
   barkRate: 1
+  barkSound: {fileID: 0}
+  drinkSound1: {fileID: 8300000, guid: 56a5a45ebe3d5dc45a7d34d8ad611e10, type: 3}
+  drinkSound2: {fileID: 8300000, guid: d438921b05bac104095763e80c08fa45, type: 3}
 --- !u!114 &114828641413127634
 MonoBehaviour:
   m_ObjectHideFlags: 1
