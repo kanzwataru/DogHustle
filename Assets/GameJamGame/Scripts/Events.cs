@@ -13,6 +13,11 @@ public struct HappinessChangedEvent
     public bool happy;
 }
 
+public struct HappyEvent
+{
+
+}
+
 public struct PauseEvent
 {
 

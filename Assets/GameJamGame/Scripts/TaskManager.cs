@@ -37,6 +37,8 @@ public class TaskManager : MonoBehaviour {
     private Image gameOverScreen;
     private bool gameOver = false;
     private bool isPaused = false;
+    private Text happyCounterText;
+    public int happyCounter;
 
     //Positions
     private Vector3 catPos;
@@ -51,6 +53,7 @@ public class TaskManager : MonoBehaviour {
 
     void Start () {
         EventBus.AddListener<PauseEvent>(HandleEvent);
+        EventBus.AddListener<HappyEvent>(HandleEvent);
 
         //set-up transforms
         catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
@@ -64,6 +67,7 @@ public class TaskManager : MonoBehaviour {
         timerBar = GameObject.FindGameObjectWithTag("TimerBar").GetComponent<RectTransform>();
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<Image>();
+        happyCounterText = GameObject.FindGameObjectWithTag("HappyCounter").GetComponent<Text>();
 
         //Fill tasks arraylist:
         tasks.Add(new Task("barkcat", barkCatImage, 15f));
@@ -170,6 +174,13 @@ public class TaskManager : MonoBehaviour {
     private void HandleEvent(PauseEvent msg)
     {
         isPaused = !isPaused;
+    }
+
+    private void HandleEvent(HappyEvent msg)
+    {
+        print("handled happiness");
+        happyCounter++;
+        happyCounterText.text = "Happy: " + happyCounter;
     }
 
 }

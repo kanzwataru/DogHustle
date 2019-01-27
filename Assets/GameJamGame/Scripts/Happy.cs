@@ -8,10 +8,9 @@ public class Happy : MonoBehaviour {
     //Proximity to dog will increase their happy status
     //Maxing out happiness changes human state and happy counter increases
     //After 10 seconds, state is reset and happy status returns to zero
-    public static int happyCounter = 0; /* would be better to have this in a GameManager of some kind, instead of static */
 
     private float happyStatus = 0f;
-    private float max = 10f;
+    private float max = 5f;
     private bool isHappy = false;
     private bool isPaused = false;
 
@@ -60,9 +59,8 @@ public class Happy : MonoBehaviour {
         {
             isHappy = true;
             EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
+            EventBus.Emit<HappyEvent>(new HappyEvent());
             bubble.SetActive(!isHappy);
-            
-            happyCounter++;
             StartCoroutine(HappyToSad());
         }
     }
