@@ -13,6 +13,8 @@ TagManager:
   - TimerBar
   - Cat
   - GameOverScreen
+  - Hydrant
+  - Bone
   layers:
   - Default
   - TransparentFX
