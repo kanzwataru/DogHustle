@@ -113,6 +113,10 @@ public class Bark : MonoBehaviour {
                 action = "barkcat";
             }
 
+            var barkable = other.gameObject.GetComponent<IBarkable>();
+            if(barkable != null)
+                barkable.OnBarked();
+
             nextBark = Time.time + barkRate;
             taskManager.CheckTask(action);
         }

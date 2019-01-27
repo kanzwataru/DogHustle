@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class AICat : MonoBehaviour, IMovable {
+public class AICat : MonoBehaviour, IMovable, IBarkable {
 	enum EAIState {
 		walking,
 		running
@@ -11,6 +11,8 @@ public class AICat : MonoBehaviour, IMovable {
 
 	public float goalThreshold = 0.02f;
 	public float turnSpeed = 0.3f;
+	public float runSpeed = 12f;
+	public float walkSpeed = 4f;
 
 	Transform goalsRoot;
 	Transform catGoalsRoot;
@@ -29,20 +31,25 @@ public class AICat : MonoBehaviour, IMovable {
 		return state == EAIState.running;
 	}
 
+	public void OnBarked() {
+		SwitchRun();
+	}
+
 	// Use this for initialization
 	void Start () {
 		goalsRoot = GameObject.Find("AIGoals").GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();
 		catInterest = GameObject.Find("CatInterestBounds").GetComponent<SphereBounds>();
+
+		SwitchWalk();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		switch(state) {
-		case EAIState.walking:
-			if(agent.remainingDistance <= goalThreshold)
-				WanderToNextGoal();
-		break;
+		if(agent.remainingDistance <= goalThreshold) {
+			NextGoal();
+			if(state == EAIState.running)
+				SwitchWalk();
 		}
 	}
 
@@ -56,9 +63,23 @@ public class AICat : MonoBehaviour, IMovable {
 			finalPosition = hit.position;            
 		}
 		return finalPosition;
-     }
+    }
 
-	void WanderToNextGoal() {
+	void SwitchWalk() {
+		NextGoal();
+
+		agent.speed = walkSpeed;
+		state = EAIState.walking;
+	}
+
+	void SwitchRun() {
+		NextGoal();
+
+		agent.speed = runSpeed;
+		state = EAIState.running;
+	}
+
+	void NextGoal() {
 		Debug.Log("New spot!");
 		agent.destination = RandomNavmeshLocation(catInterest.transform.position, catInterest.radius);
 	}
