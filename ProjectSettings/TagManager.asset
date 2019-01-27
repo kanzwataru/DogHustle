@@ -14,6 +14,7 @@ TagManager:
   - Cat
   - GameOverScreen
   - Hydrant
+  - Bone
   layers:
   - Default
   - TransparentFX

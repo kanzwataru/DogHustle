@@ -53,6 +53,7 @@ public class Happy : MonoBehaviour {
         if (happyStatus >= max && imHappy == false)
         {
             imHappy = true;
+            print("happy");
             happyCounter++;
             StartCoroutine(HappyToSad());
             EventBus.Emit<HappyEvent>(new HappyEvent()); //call animations
@@ -62,12 +63,6 @@ public class Happy : MonoBehaviour {
     private void HandleEvent(PauseEvent msg)
     {
         isPaused = !isPaused;
+        enabled = !enabled;
     }
-
-    /*
-    private void HandleEvent(HappyEvent msg)
-    {
-       
-    }
-    */
 }

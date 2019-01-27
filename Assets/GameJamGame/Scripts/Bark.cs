@@ -18,6 +18,7 @@ public class Bark : MonoBehaviour {
     private AudioSource source;
     private string action = "";
     private bool inTriggerZone = false; //for free barking
+    private bool isPaused = false;
 
     private void Start()
     {
@@ -60,18 +61,31 @@ public class Bark : MonoBehaviour {
 
     IEnumerator BarkBlink()
     {
-        barkEffect.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        barkEffect.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
-        barkEffect.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
-        barkEffect.SetActive(false);
-        yield return new WaitForSeconds(0.2f);
-        barkEffect.SetActive(true);
-        yield return new WaitForSeconds(0.2f);
+
+        for (int i = 0; i < 5; i++)
+        {
+            while (isPaused)
+            {
+                yield return null;
+            }
+            barkEffect.SetActive(!barkEffect.activeSelf);
+            yield return new WaitForSeconds(0.2f);
+        }
         barkEffect.SetActive(false);
 
+        /*
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(true);
+        yield return new WaitForSeconds(0.2f);
+        barkEffect.SetActive(false);
+        */
     }
 
     private void OnTriggerStay(Collider other)
@@ -128,6 +142,7 @@ public class Bark : MonoBehaviour {
 
     private void HandleEvent(PauseEvent msg)
     {
+        isPaused = (!isPaused);
         enabled = !enabled;
     }
 
