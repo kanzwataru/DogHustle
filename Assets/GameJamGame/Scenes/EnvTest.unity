@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.4465785, g: 0.49641252, b: 0.574817, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -500,6 +500,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48800851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1001 &220264998
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 631524928}
+    m_Modifications:
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4585736957430392, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 76355c0c5b74fad4d80ae8c8a7534298, type: 2}
+  m_IsPrefabAsset: 0
 --- !u!114 &245257840 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 114549848050755282, guid: 58aec8ae1d28b3f4e901b9d0ec3ea047,
@@ -1186,6 +1228,11 @@ Prefab:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7284be14b89db4f5b92e06ab35c27a63, type: 2}
   m_IsPrefabAsset: 0
+--- !u!4 &631524928 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4828795011971440, guid: 7284be14b89db4f5b92e06ab35c27a63,
+    type: 2}
+  m_PrefabInternal: {fileID: 631524927}
 --- !u!1 &658939199
 GameObject:
   m_ObjectHideFlags: 0
@@ -2476,6 +2523,11 @@ Prefab:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114180113451412684, guid: 85872176fdf3fc546b5a2a3acb531a95,
+        type: 2}
+      propertyPath: fireHydrantImage
+      value: 
+      objectReference: {fileID: 2800000, guid: e58a78fa4ee334d4bba1a62d0d917f4b, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85872176fdf3fc546b5a2a3acb531a95, type: 2}
   m_IsPrefabAsset: 0
@@ -3277,9 +3329,30 @@ Prefab:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 100206, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2, type: 3}
+      propertyPath: m_TagString
+      value: Hydrant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2, type: 3}
   m_IsPrefabAsset: 0
+--- !u!1 &1728090917 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100206, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2,
+    type: 3}
+  m_PrefabInternal: {fileID: 1728090916}
+--- !u!135 &1728090918
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1728090917}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.66
+  m_Center: {x: 11.202626, y: 0.304702, z: 23.356602}
 --- !u!1 &1733605644
 GameObject:
   m_ObjectHideFlags: 0

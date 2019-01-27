@@ -88,14 +88,15 @@ public class Bark : MonoBehaviour {
                 DrinkWaterSound();
                 action = "water";
             }
-            else if (other.gameObject.tag == "Cat")
-            {
-                BarkEffects();
-                action = "barkcat";
-            }
             else if (other.gameObject.tag == "Hydrant")
             {
                 action = "hydrant";
+            }
+
+            if (other.gameObject.tag == "Cat")
+            {
+                BarkEffects();
+                action = "barkcat";
             }
 
             nextBark = Time.time + barkRate;
