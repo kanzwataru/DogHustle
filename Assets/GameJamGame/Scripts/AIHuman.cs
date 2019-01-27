@@ -52,9 +52,13 @@ public class AIHuman : MonoBehaviour, IMovable {
 		break;
 
 		case EAIState.Moving:
-			if(agent.remainingDistance <= goalThreshold) {
-				state = EAIState.Turning;
-			}
+                if (agent.enabled)
+                {
+                    if (agent.remainingDistance <= goalThreshold)
+                    {
+                        state = EAIState.Turning;
+                    }
+                }
 		break;
 
 		case EAIState.Turning:
@@ -85,5 +89,6 @@ public class AIHuman : MonoBehaviour, IMovable {
     private void HandleEvent(PauseEvent msg)
     {
         agent.enabled = !agent.enabled;
+        MoveToNextGoal();
     }
 }

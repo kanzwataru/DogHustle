@@ -279,7 +279,7 @@ GameObject:
   - component: {fileID: 135066831973589412}
   m_Layer: 0
   m_Name: Dog
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -507,7 +507,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1774535533269510}
   m_LocalRotation: {x: -0.36865985, y: -0.45100525, z: 0.21188037, w: -0.78472346}
-  m_LocalPosition: {x: -10.51, y: 15.31, z: -5.96}
+  m_LocalPosition: {x: -12.87, y: 18.6, z: -7.34}
   m_LocalScale: {x: 1.0000002, y: 1, z: 1}
   m_Children:
   - {fileID: 4442486055849140}
@@ -1922,6 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf652f1996b434bc8a6073b6e067490d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  happy: 1
 --- !u!114 &114164105331698236
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1957,7 +1958,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8ebae6f02da9797418c98d33b5b934d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  canMove: 1
   maxSpeed: 430
   accelRate: 0.4
   decelRate: 0.1
@@ -1981,7 +1981,6 @@ MonoBehaviour:
   drinkSound2: {fileID: 8300000, guid: d438921b05bac104095763e80c08fa45, type: 3}
   eatSound1: {fileID: 8300000, guid: da35a331002fa67438e2e39757e7e4bf, type: 3}
   eatSound2: {fileID: 8300000, guid: 567b2ff2ddf842a4e99029e7d5aed2ce, type: 3}
-  canBark: 1
 --- !u!114 &114768680900608804
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1999,6 +1998,7 @@ MonoBehaviour:
   wallTag: Wall
   wallMatTemplate: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
   fadedOpacity: 0.2
+  fadeFade: 0.5
   fadeTime: 2
 --- !u!114 &114828641413127634
 MonoBehaviour:
