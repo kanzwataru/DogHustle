@@ -40,7 +40,7 @@ public class TaskManager : MonoBehaviour {
     private bool isPaused = false;
     private Text happyCounterText;
     public int happyCounter;
-    private GameObject gameOverPanel;
+    public GameObject gameOverPanel;
 
     //Positions
     private Vector3 catPos;
@@ -52,6 +52,8 @@ public class TaskManager : MonoBehaviour {
     private Task currentTask;
     private List<Task> tasks = new List<Task>();
     private int task;
+    private int tasksCompleted = 0; //later: time
+    private int taskTimeMod = 500;
 
     void Start () {
         EventBus.AddListener<PauseEvent>(HandleEvent);
@@ -70,7 +72,6 @@ public class TaskManager : MonoBehaviour {
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<Image>();
         happyCounterText = GameObject.FindGameObjectWithTag("HappyCounter").GetComponent<Text>();
-        gameOverPanel = GameObject.FindGameObjectWithTag("GameOver");
 
         //Fill tasks arraylist:
         tasks.Add(new Task("barkcat", barkCatImage, 15f));
@@ -95,6 +96,7 @@ public class TaskManager : MonoBehaviour {
         {
             if (string.Compare(action, currentTask.description) == 0)
             {
+                tasksCompleted++;
                 TaskComplete();
             }
         }
@@ -128,7 +130,7 @@ public class TaskManager : MonoBehaviour {
     IEnumerator LerpTimer()
     {
         float progress = 0;
-        float speed = currentTask.timer / 500;
+        float speed = currentTask.timer / taskTimeMod;
 
         while (progress <= 1)
         {
@@ -169,6 +171,8 @@ public class TaskManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         gameOverPanel.SetActive(true);
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void ResetGame() //for call by the death screen button
@@ -184,6 +188,15 @@ public class TaskManager : MonoBehaviour {
             Color color = gameOverScreen.color;
             color.a = Mathf.MoveTowards(color.a, 255, Time.deltaTime);
             gameOverScreen.color = color;
+        }
+
+        if (tasksCompleted > 5)
+        {
+            taskTimeMod = 700;
+        } 
+        else if (tasksCompleted > 10)
+        {
+            taskTimeMod = 900;
         }
     }
 

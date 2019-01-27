@@ -11,7 +11,7 @@ public class Happy : MonoBehaviour {
     public static int happyCounter = 0; /* would be better to have this in a GameManager of some kind, instead of static */
     public Material personMat;
 
-    public float max = 10f;
+    public float max = 4f;
 
     private float happyStatus = 0f;
     private bool isHappy = false;
