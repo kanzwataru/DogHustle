@@ -62,6 +62,9 @@ public class AIHuman : MonoBehaviour, IMovable {
 		break;
 
 		case EAIState.Turning:
+			if(agent.remainingDistance >= goalThreshold)
+				state = EAIState.Moving;
+
 			xform.rotation = Quaternion.Lerp(xform.rotation, currentGoalXform.rotation, turnSpeed * Time.deltaTime);
 			if(xform.rotation == currentGoalXform.rotation)
 				state = EAIState.Idling;
@@ -75,10 +78,26 @@ public class AIHuman : MonoBehaviour, IMovable {
 	}
 
 	void DecideGoals() {
+		bool valid = true;
+		int times = 0;
 		Transform goal;
 		do {
 			goal = goalsRoot.GetChild((int)Random.Range(0, goalsRoot.childCount - 1));
-		} while(goal == currentGoalXform);
+		
+			if(goal == currentGoal)
+				valid = false;
+			
+			/* don't go there if there is already soemone */
+			var nearby = Physics.OverlapSphere(goal.position, 2f);
+			foreach(var collider in nearby) {
+				if(collider.GetComponent<AIHuman>() != null) {
+					valid = false;
+				}
+			}
+
+			if(times++ > goalsRoot.childCount)
+				break; /* don't get stuck */
+		} while(goal != valid);
 
 		currentGoalXform = goal;
 		currentGoal = goal.GetComponent<AIGoal>();

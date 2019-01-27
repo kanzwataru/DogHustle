@@ -9,13 +9,17 @@ public class Happy : MonoBehaviour {
     //Maxing out happiness changes human state and happy counter increases
     //After 10 seconds, state is reset and happy status returns to zero
     public static int happyCounter = 0; /* would be better to have this in a GameManager of some kind, instead of static */
+    public Material bubbleMat;
+    public Material personMat;
+
+    public float max = 10f;
 
     private float happyStatus = 0f;
-    private float max = 10f;
     private bool isHappy = false;
     private bool isPaused = false;
 
     private GameObject bubble;
+    private float bubbleOpacity = 1.0f;
 
     private void Start()
     {
@@ -32,11 +36,17 @@ public class Happy : MonoBehaviour {
             if (happyStatus < max && !isPaused)
             {
                 happyStatus += Time.deltaTime;
+                bubbleOpacity -= Time.deltaTime;
             }
-
-            Debug.Log("Getting happy..." + happyStatus);
         }
+    }
 
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            bubbleOpacity = 1.0f;
+        }
     }
 
     IEnumerator HappyToSad()
@@ -67,6 +77,10 @@ public class Happy : MonoBehaviour {
             happyCounter++;
             StartCoroutine(HappyToSad());
         }
+
+        bubbleMat.SetFloat("_Opacity", bubbleOpacity);
+        if(personMat != null)
+            personMat.SetFloat("_Fade", Mathf.Lerp(0.6f, 0.0f, UtilFuncs.remap(happyStatus, 0.0f, max, 0.0f, 1.0f)));
     }
 
     private void HandleEvent(PauseEvent msg)

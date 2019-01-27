@@ -6,7 +6,7 @@ Material:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: GlowObjectMat
+  m_Name: DadMat
   m_Shader: {fileID: 4800000, guid: 5e5eb4faa64fd43618364e0c3fb09f77, type: 3}
   m_ShaderKeywords: _ENABLETRANSPARENCY_ON
   m_LightmapFlags: 4
@@ -62,7 +62,7 @@ Material:
     - _DstBlend: 0
     - _EnableFog: 0
     - _EnableTransparency: 1
-    - _Fade: 0.32981944
+    - _Fade: 0.6
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1
@@ -77,8 +77,9 @@ Material:
     - _UVSec: 0
     - _ZWrite: 1
     m_Colors:
+    - Tint: {r: 0, g: 0, b: 0, a: 1}
     - _AdditiveTint: {r: 0, g: 0, b: 0, a: 0}
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _FadeColor: {r: 0.8472365, g: 0.8862745, b: 0.5921569, a: 1}
+    - _FadeColor: {r: 0.31719473, g: 0.45656827, b: 0.509434, a: 1}
     - _MultiplyTint: {r: 1, g: 1, b: 1, a: 1}
