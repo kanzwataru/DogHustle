@@ -1,0 +1,20 @@
+* dog movement
+* human movement
+
+- bounds
+- game state (pause, win, lose)
+- menu
+
+- sadness mechanic
+- (alergic mechanic)
+- (burglars)
+
+- (fog of war aesthetic)
+- lineart/pulsing
+- shadows
+- (lighting)
+
+- sounds
+- music
+
+
