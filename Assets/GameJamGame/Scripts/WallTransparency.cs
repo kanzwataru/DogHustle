@@ -24,16 +24,26 @@ public class WallTransparency : MonoBehaviour {
 		xform = GetComponent<Transform>();
 		player = xform.parent.parent;
 
+		/* yikes, assuming naming conventions */
+		foreach(var obj in GameObject.FindObjectsOfType<GameObject>()) {
+			if(obj.name.Contains("wall") || obj.name.Contains("Wall")) {
+				obj.layer = LayerMask.NameToLayer(wallTag);
+				obj.tag = wallTag;
+			}
+		}
+
 		foreach(var obj in GameObject.FindGameObjectsWithTag(wallTag)) {
 			var mesh = obj.GetComponent<MeshRenderer>();
-			var mats = mesh.materials;
-			for(int i = 0; i < mats.Length; ++i) {
-				mats[i] = new Material(wallMatTemplate);
+			if(mesh) {
+				var mats = mesh.materials;
+				for(int i = 0; i < mats.Length; ++i) {
+					mats[i] = new Material(wallMatTemplate);
+				}
+
+				walls.Add(obj.transform, new Wall() {mats = mats, percent = 0.0f, obstructed = false});
+
+				mesh.materials = mats;
 			}
-
-			walls.Add(obj.transform, new Wall() {mats = mats, percent = 0.0f, obstructed = false});
-
-			mesh.materials = mats;
 		}
 	}
 
