@@ -7,17 +7,15 @@ public class TaskManager : MonoBehaviour {
 
     public class Task
     {
+        public string description;
         public Texture image;
         public float timer;
-        public System.Action<Vector3> function;
-        public Vector3 position;
 
-        public Task(Texture image, float timer, System.Action<Vector3> function, Vector3 position)
+        public Task(string description, Texture image, float timer)
         {
+            this.description = description;
             this.image = image;
             this.timer = timer;
-            this.function = function;
-            this.position = position;
         }
     }
 
@@ -25,11 +23,11 @@ public class TaskManager : MonoBehaviour {
 
     //UI
     private GameObject taskBox;
-    private Text timerText;
     private Animator iconAnimator;
     public Texture foodImage;
     public Texture waterImage;
     public Texture barkCatImage;
+    public Texture fireHydrantImage;
     private GameObject currentImageObject;
     private RawImage currentImage;
     private RectTransform timerBar;
@@ -38,6 +36,7 @@ public class TaskManager : MonoBehaviour {
     private bool timerOn = true;
     private Image gameOverScreen;
     private bool gameOver = false;
+    private bool isPaused = false;
 
     //Positions
     private Vector3 catPos;
@@ -51,6 +50,7 @@ public class TaskManager : MonoBehaviour {
     private int task;
 
     void Start () {
+        EventBus.AddListener<PauseEvent>(HandleEvent);
 
         //set-up transforms
         catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
@@ -66,9 +66,10 @@ public class TaskManager : MonoBehaviour {
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<Image>();
 
         //Fill tasks arraylist:
-        tasks.Add(new Task(barkCatImage, 15f, BarkAt, catPos));
-        tasks.Add(new Task(foodImage, 20f, EatAt, foodBowlPos));
-        tasks.Add(new Task(waterImage, 20f, DrinkAt, waterBowlPos));
+        tasks.Add(new Task("barkcat", barkCatImage, 15f));
+        tasks.Add(new Task("food", foodImage, 20f));
+        tasks.Add(new Task("water", waterImage, 20f));
+        tasks.Add(new Task("hydrant", fireHydrantImage, 20f)); //fire hydrant pos?
 
         GetNewTask(); //tasks all have their own text, times, and RULES
     }
@@ -79,14 +80,13 @@ public class TaskManager : MonoBehaviour {
         print("New Task");
         currentImage.texture = currentTask.image;
         StartCoroutine(LerpTimer());
-        currentTask.function(currentTask.position); //set current task rules
     }
 
     public void CheckTask(string action)
     {
         if (currentTask != null)
         {
-            if (string.Compare(action, taskLocation) == 0)
+            if (string.Compare(action, currentTask.description) == 0)
             {
                 TaskComplete();
             }
@@ -118,23 +118,6 @@ public class TaskManager : MonoBehaviour {
         taskBox.SetActive(true); //show task to player
     }
 
-    //TASK RULES
-
-    private void BarkAt(Vector3 location)
-    {
-        taskLocation = "cat";
-    }
-
-    private void DrinkAt(Vector3 location)
-    {
-        taskLocation = "water";
-    }
-
-    private void EatAt(Vector3 location)
-    {
-        taskLocation = "food";
-    }
-
     IEnumerator LerpTimer()
     {
         float progress = 0;
@@ -142,6 +125,11 @@ public class TaskManager : MonoBehaviour {
 
         while (progress <= 1)
         {
+            while (isPaused)
+            {
+                yield return null;
+            }
+
             timerBar.localScale = Vector3.Lerp(startWidth, endWidth, progress);
             progress += Time.deltaTime * speed;
             yield return null;
@@ -155,6 +143,7 @@ public class TaskManager : MonoBehaviour {
             {
                 iconAnimator.SetBool("Urgent", true);
             }
+
         }
         timerBar.localScale = endWidth;
         GameOver();
@@ -163,7 +152,7 @@ public class TaskManager : MonoBehaviour {
     public void GameOver()
     {
         timerOn = false;
-        //gameOver = true;
+        gameOver = true;
         EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
     }
 
@@ -176,6 +165,11 @@ public class TaskManager : MonoBehaviour {
             color.a = Mathf.MoveTowards(color.a, 255, Time.deltaTime);
             gameOverScreen.color = color;
         }
+    }
+
+    private void HandleEvent(PauseEvent msg)
+    {
+        isPaused = !isPaused;
     }
 
 }

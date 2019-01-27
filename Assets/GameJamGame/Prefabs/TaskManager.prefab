@@ -187,6 +187,7 @@ MonoBehaviour:
   foodImage: {fileID: 2800000, guid: b82d0c5c3a8f44a46ab2541b6612afbd, type: 3}
   waterImage: {fileID: 2800000, guid: 0489799e4f9814f3fa838c87f13e2845, type: 3}
   barkCatImage: {fileID: 2800000, guid: c2f44da841a7d425b9f72e9c16443968, type: 3}
+  fireHydrantImage: {fileID: 2800000, guid: 00d5ad085d1566b4aa3473c09df3b56c, type: 3}
 --- !u!114 &114182204726068510
 MonoBehaviour:
   m_ObjectHideFlags: 1

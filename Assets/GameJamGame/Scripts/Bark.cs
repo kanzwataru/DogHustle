@@ -18,11 +18,12 @@ public class Bark : MonoBehaviour {
     private AudioSource source;
     private string action = "";
     private bool inTriggerZone = false; //for free barking
-    public bool canBark = true;
 
     private void Start()
     {
         source = this.GetComponent<AudioSource>();
+        EventBus.AddListener<PauseEvent>(HandleEvent);
+        EventBus.AddListener<GameOverEvent>(HandleEvent);
     }
 
     //Effects: Sound and Visual
@@ -75,24 +76,26 @@ public class Bark : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark && canBark)
+        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark)
         {
             if (other.gameObject.tag == "FoodBowl")
             {
                 EatFoodSound();
                 action = "food";
-                print("Interacted with Food Bowl");
             }
-            else if (other.gameObject.tag == "WaterBowl")
+            else if (other.gameObject.tag == "WaterBowl" || other.gameObject.tag == "Toilet")
             {
                 DrinkWaterSound();
                 action = "water";
-                print("Interacted with Water Bowl");
             }
             else if (other.gameObject.tag == "Cat")
             {
-                action = "cat";
-                print("Interacted with Back Door");
+                BarkEffects();
+                action = "barkcat";
+            }
+            else if (other.gameObject.tag == "Hydrant")
+            {
+                action = "hydrant";
             }
 
             nextBark = Time.time + barkRate;
@@ -112,7 +115,7 @@ public class Bark : MonoBehaviour {
 
     private void Update()
     {
-        if (!inTriggerZone && canBark)
+        if (!inTriggerZone)
         {
             if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
             {
@@ -120,6 +123,15 @@ public class Bark : MonoBehaviour {
                 BarkEffects();
             }
         }
+    }
 
+    private void HandleEvent(PauseEvent msg)
+    {
+        enabled = !enabled;
+    }
+
+    private void HandleEvent(GameOverEvent msg)
+    {
+        enabled = !enabled;
     }
 }

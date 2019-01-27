@@ -15,6 +15,7 @@ public class QuillAnimation : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         QuillAnimSystem.instance.RequestFPSCounter(frameRate);
+        EventBus.AddListener<PauseEvent>(HandleEvent);
 
         var root = transform.Find("BakedMesh");
         if(root) {
@@ -87,5 +88,10 @@ public class QuillAnimation : MonoBehaviour {
 
     public void RemoveOnEndHandler(UnityAction action) {
         onEndEvent.RemoveListener(action);
+    }
+
+    private void HandleEvent(PauseEvent msg)
+    {
+        enabled = !enabled;
     }
 }

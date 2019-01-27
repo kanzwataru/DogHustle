@@ -62,7 +62,11 @@ Material:
     - _DstBlend: 0
     - _EnableFog: 0
     - _EnableTransparency: 1
+<<<<<<< HEAD
     - _Fade: 0.030946704
+=======
+    - _Fade: 0.45599642
+>>>>>>> nathan
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

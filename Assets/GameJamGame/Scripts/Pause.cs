@@ -5,8 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour {
 
-    public Motor dog;
-    public Bark bark;
     public string menuScene;
     public GameObject pausePanel;
 
@@ -22,9 +20,8 @@ public class Pause : MonoBehaviour {
 
     private void TogglePause()
     {
+        EventBus.Emit<PauseEvent>(new PauseEvent()); //stop movements
         pausePanel.SetActive(!pausePanel.activeSelf);
-        dog.canMove = !dog.canMove;
-        bark.canBark = !bark.canBark;
     }
 
     // Update is called once per frame
@@ -35,4 +32,5 @@ public class Pause : MonoBehaviour {
             TogglePause();
         }
 	}
+
 }

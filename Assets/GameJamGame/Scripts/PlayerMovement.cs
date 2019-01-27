@@ -9,7 +9,8 @@ public class PlayerMovement : MonoBehaviour {
 	void Start () {
         motor = this.GetComponentInChildren<Motor>();
         EventBus.AddListener<GameOverEvent>(HandleEvent);
-	}
+        EventBus.AddListener<PauseEvent>(HandleEvent);
+    }
 
     private void FixedUpdate()
     {
@@ -26,6 +27,7 @@ public class PlayerMovement : MonoBehaviour {
             dir.x = -1;
 
         motor.Move(dir);
+
     }
 
     private void HandleEvent(GameOverEvent msg) {
@@ -33,4 +35,12 @@ public class PlayerMovement : MonoBehaviour {
         motor.Move(dir);
         enabled = false;
     }
+
+    private void HandleEvent(PauseEvent msg)
+    {
+        var dir = Vector2Int.zero;
+        motor.Move(dir);
+        enabled = !enabled;
+    }
+
 }
