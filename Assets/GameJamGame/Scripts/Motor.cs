@@ -69,4 +69,8 @@ public class Motor : MonoBehaviour, IMovable {
         return velocity != Vector2.zero;
     }
 
+    public bool isRunning() {
+        return false;
+    }
+
 }

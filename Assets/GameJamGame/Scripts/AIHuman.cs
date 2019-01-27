@@ -27,6 +27,10 @@ public class AIHuman : MonoBehaviour, IMovable {
 		return state == EAIState.Moving;
 	}
 
+	public bool isRunning() {
+		return false;
+	}
+
 	void Start () {
 		goalsRoot = GameObject.Find("AIGoals").GetComponent<Transform>();
 		agent = GetComponent<NavMeshAgent>();

@@ -13,7 +13,10 @@ public class MoveAnimCoop : MonoBehaviour {
 
 	void Update () {
 		if(movable.isMoving()) {
-			state.EnsureState("walk");
+			if(movable.isRunning())
+				state.EnsureState("run");
+			else
+				state.EnsureState("walk");
 		}
 		else {
 			state.EnsureState("idle");

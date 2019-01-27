@@ -4,4 +4,5 @@ using UnityEngine;
 
 public interface IMovable {
 	bool isMoving();
+	bool isRunning();
 }
