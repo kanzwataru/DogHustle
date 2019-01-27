@@ -83,7 +83,7 @@ public class Bark : MonoBehaviour {
                 EatFoodSound();
                 action = "food";
             }
-            else if (other.gameObject.tag == "WaterBowl" || other.gameObject.tag == "Toilet")
+            else if (other.gameObject.tag == "WaterBowl")
             {
                 DrinkWaterSound();
                 action = "water";
