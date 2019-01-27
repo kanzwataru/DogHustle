@@ -77,6 +77,49 @@ ModelImporter:
     100142: Tub_0000
     100144: Tv_0000
     100146: Wip_0000
+    100148: Backyard
+    100150: Backyard_0000
+    100152: Bed
+    100154: Bed_0000
+    100156: Bedroom1
+    100158: Bedroom1-wall1
+    100160: Bedroom1-wall1_0000
+    100162: Bedroom1-wall2
+    100164: Bedroom1-wall2_0000
+    100166: Bedroom1-wall3
+    100168: Bedroom1-wall3_0000
+    100170: Bedroom1-wall4
+    100172: Bedroom1-wall4_0000
+    100174: Bedroom2
+    100176: Bedroom2-floor
+    100178: Bedroom2-floor_0000
+    100180: Bedroom2-wall1
+    100182: Bedroom2-wall1_0000
+    100184: Bedroom2-wall2
+    100186: Bedroom2-wall2_0000
+    100188: Bedroom2-wall4
+    100190: Bedroom2-wall4_0000
+    100192: Bedroomfloor
+    100194: Bedroomfloor_0000
+    100196: Bedroomprops
+    100198: Bedroomprops_0000
+    100200: Car
+    100202: Car_0000
+    100204: FireHydrant
+    100206: FireHydrant_0000
+    100208: Garage
+    100210: Garagefloor
+    100212: Garagefloor_0000
+    100214: Garagewall1
+    100216: Garagewall1_0000
+    100218: Garagewall2
+    100220: Garagewall2_0000
+    100222: Garagewall3
+    100224: Garagewall3_0000
+    100226: Garagewall4
+    100228: Garagewall4_0000
+    100230: Other
+    100232: Other_0000
     400000: Bathroom
     400002: Bathroomfloor
     400004: Bathroomwall1
@@ -151,6 +194,49 @@ ModelImporter:
     400142: Tub_0000
     400144: Tv_0000
     400146: Wip_0000
+    400148: Backyard
+    400150: Backyard_0000
+    400152: Bed
+    400154: Bed_0000
+    400156: Bedroom1
+    400158: Bedroom1-wall1
+    400160: Bedroom1-wall1_0000
+    400162: Bedroom1-wall2
+    400164: Bedroom1-wall2_0000
+    400166: Bedroom1-wall3
+    400168: Bedroom1-wall3_0000
+    400170: Bedroom1-wall4
+    400172: Bedroom1-wall4_0000
+    400174: Bedroom2
+    400176: Bedroom2-floor
+    400178: Bedroom2-floor_0000
+    400180: Bedroom2-wall1
+    400182: Bedroom2-wall1_0000
+    400184: Bedroom2-wall2
+    400186: Bedroom2-wall2_0000
+    400188: Bedroom2-wall4
+    400190: Bedroom2-wall4_0000
+    400192: Bedroomfloor
+    400194: Bedroomfloor_0000
+    400196: Bedroomprops
+    400198: Bedroomprops_0000
+    400200: Car
+    400202: Car_0000
+    400204: FireHydrant
+    400206: FireHydrant_0000
+    400208: Garage
+    400210: Garagefloor
+    400212: Garagefloor_0000
+    400214: Garagewall1
+    400216: Garagewall1_0000
+    400218: Garagewall2
+    400220: Garagewall2_0000
+    400222: Garagewall3
+    400224: Garagewall3_0000
+    400226: Garagewall4
+    400228: Garagewall4_0000
+    400230: Other
+    400232: Other_0000
     2100000: Single Sided Material
     2100002: Double Sided Material
     2100004: No Name
@@ -211,6 +297,26 @@ ModelImporter:
     2300108: Tub_0000
     2300110: Tv_0000
     2300112: Wip_0000
+    2300114: Backyard_0000
+    2300116: Bed_0000
+    2300118: Bedroom1-wall1_0000
+    2300120: Bedroom1-wall2_0000
+    2300122: Bedroom1-wall3_0000
+    2300124: Bedroom1-wall4_0000
+    2300126: Bedroom2-floor_0000
+    2300128: Bedroom2-wall1_0000
+    2300130: Bedroom2-wall2_0000
+    2300132: Bedroom2-wall4_0000
+    2300134: Bedroomfloor_0000
+    2300136: Bedroomprops_0000
+    2300138: Car_0000
+    2300140: FireHydrant_0000
+    2300142: Garagefloor_0000
+    2300144: Garagewall1_0000
+    2300146: Garagewall2_0000
+    2300148: Garagewall3_0000
+    2300150: Garagewall4_0000
+    2300152: Other_0000
     3300000: Bathroomfloor
     3300002: Bathroomwall1
     3300004: Bathroomwall2
@@ -268,6 +374,26 @@ ModelImporter:
     3300108: Tub_0000
     3300110: Tv_0000
     3300112: Wip_0000
+    3300114: Backyard_0000
+    3300116: Bed_0000
+    3300118: Bedroom1-wall1_0000
+    3300120: Bedroom1-wall2_0000
+    3300122: Bedroom1-wall3_0000
+    3300124: Bedroom1-wall4_0000
+    3300126: Bedroom2-floor_0000
+    3300128: Bedroom2-wall1_0000
+    3300130: Bedroom2-wall2_0000
+    3300132: Bedroom2-wall4_0000
+    3300134: Bedroomfloor_0000
+    3300136: Bedroomprops_0000
+    3300138: Car_0000
+    3300140: FireHydrant_0000
+    3300142: Garagefloor_0000
+    3300144: Garagewall1_0000
+    3300146: Garagewall2_0000
+    3300148: Garagewall3_0000
+    3300150: Garagewall4_0000
+    3300152: Other_0000
     4300000: Diningroomplant
     4300002: Diningroom-table
     4300004: Diningroom-wall
@@ -325,6 +451,26 @@ ModelImporter:
     4300108: Plant_0000
     4300110: Livingroom-wall2_0000
     4300112: Tv_0000
+    4300114: Bedroom2-floor_0000
+    4300116: Bed_0000
+    4300118: Bedroom2-wall2_0000
+    4300120: Bedroom2-wall1_0000
+    4300122: Bedroom2-wall4_0000
+    4300124: Bedroom1-wall4_0000
+    4300126: Bedroom1-wall3_0000
+    4300128: Bedroom1-wall1_0000
+    4300130: Bedroom1-wall2_0000
+    4300132: Bedroomprops_0000
+    4300134: Bedroomfloor_0000
+    4300136: Car_0000
+    4300138: Garagefloor_0000
+    4300140: Garagewall4_0000
+    4300142: Garagewall3_0000
+    4300144: Garagewall2_0000
+    4300146: Garagewall1_0000
+    4300148: FireHydrant_0000
+    4300150: Other_0000
+    4300152: Backyard_0000
     6400000: Bathroomfloor
     6400002: Bathroomwall1
     6400004: Bathroomwall2
@@ -382,6 +528,26 @@ ModelImporter:
     6400108: Tub_0000
     6400110: Tv_0000
     6400112: Wip_0000
+    6400114: Backyard_0000
+    6400116: Bed_0000
+    6400118: Bedroom1-wall1_0000
+    6400120: Bedroom1-wall2_0000
+    6400122: Bedroom1-wall3_0000
+    6400124: Bedroom1-wall4_0000
+    6400126: Bedroom2-floor_0000
+    6400128: Bedroom2-wall1_0000
+    6400130: Bedroom2-wall2_0000
+    6400132: Bedroom2-wall4_0000
+    6400134: Bedroomfloor_0000
+    6400136: Bedroomprops_0000
+    6400138: Car_0000
+    6400140: FireHydrant_0000
+    6400142: Garagefloor_0000
+    6400144: Garagewall1_0000
+    6400146: Garagewall2_0000
+    6400148: Garagewall3_0000
+    6400150: Garagewall4_0000
+    6400152: Other_0000
     2186277476908879412: ImportLogs
   externalObjects:
   - first:

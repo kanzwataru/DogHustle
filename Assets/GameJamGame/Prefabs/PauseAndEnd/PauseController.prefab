@@ -51,7 +51,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 633a1c81e3a2a7f4a9605c8b708724fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dog: {fileID: 0}
-  dad: {fileID: 0}
   menuScene: Menu
   pausePanel: {fileID: 0}

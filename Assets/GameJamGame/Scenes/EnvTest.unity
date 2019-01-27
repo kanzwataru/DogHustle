@@ -500,12 +500,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 48800851}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &245257840 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114549848050755282, guid: 58aec8ae1d28b3f4e901b9d0ec3ea047,
-    type: 2}
-  m_PrefabInternal: {fileID: 923255077}
-  m_Script: {fileID: 11500000, guid: 8ebae6f02da9797418c98d33b5b934d5, type: 3}
 --- !u!1 &380302949
 GameObject:
   m_ObjectHideFlags: 0
@@ -2008,12 +2002,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1056426300}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1097379469 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 114702721813677730, guid: 58aec8ae1d28b3f4e901b9d0ec3ea047,
-    type: 2}
-  m_PrefabInternal: {fileID: 923255077}
-  m_Script: {fileID: 11500000, guid: 42ad2ad79293d07479c898f7506ecd8a, type: 3}
 --- !u!1 &1104804550
 GameObject:
   m_ObjectHideFlags: 0
@@ -2279,11 +2267,6 @@ Prefab:
     - target: {fileID: 224984714417479908, guid: 25420e53960fa7a46bc257502ae2d6a7,
         type: 2}
       propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 114008352239272680, guid: 25420e53960fa7a46bc257502ae2d6a7,
-        type: 2}
-      propertyPath: m_Color.a
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -3046,16 +3029,6 @@ Prefab:
       propertyPath: pausePanel
       value: 
       objectReference: {fileID: 753014733}
-    - target: {fileID: 114890357862203300, guid: 4ec3be468146e5b4193f23791e3a0065,
-        type: 2}
-      propertyPath: dog
-      value: 
-      objectReference: {fileID: 245257840}
-    - target: {fileID: 114890357862203300, guid: 4ec3be468146e5b4193f23791e3a0065,
-        type: 2}
-      propertyPath: bark
-      value: 
-      objectReference: {fileID: 1097379469}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ec3be468146e5b4193f23791e3a0065, type: 2}
   m_IsPrefabAsset: 0
