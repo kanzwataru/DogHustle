@@ -144,6 +144,31 @@ ModelImporter:
     4300044: Plant
     4300046: Livingroom-wall2
     4300048: Tv
+    6400000: Bathroomfloor
+    6400002: Bathroomwall1
+    6400004: Bathroomwall2
+    6400006: bathroomwall3
+    6400008: Bathroomwall4
+    6400010: Coffeetable
+    6400012: Diningroom-table
+    6400014: Diningroom-wall
+    6400016: Diningroom-wall3
+    6400018: Diningroomfloor
+    6400020: Diningroomplant
+    6400022: Floor-livingroom
+    6400024: Frontyard
+    6400026: Kitchen
+    6400028: Lamptable
+    6400030: Livingroom-wall1
+    6400032: Livingroom-wall2
+    6400034: Oudoors
+    6400036: Plant
+    6400038: rug
+    6400040: Sink
+    6400042: Toilet
+    6400044: Tub
+    6400046: Tv
+    6400048: Wip
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
@@ -188,7 +213,7 @@ ModelImporter:
     lODScreenPercentages: []
     globalScale: 1
     meshCompression: 0
-    addColliders: 0
+    addColliders: 1
     importVisibility: 1
     importBlendShapes: 1
     importCameras: 1
@@ -213,7 +238,7 @@ ModelImporter:
     normalImportMode: 0
     tangentImportMode: 3
     normalCalculationMode: 4
-  importAnimation: 1
+  importAnimation: 0
   copyAvatar: 0
   humanDescription:
     serializedVersion: 2
