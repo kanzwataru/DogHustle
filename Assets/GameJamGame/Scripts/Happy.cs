@@ -21,6 +21,8 @@ public class Happy : MonoBehaviour {
     {
         EventBus.AddListener<PauseEvent>(HandleEvent);
         bubble = transform.GetChild(0).gameObject;
+
+        EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
     }
 
     private void OnTriggerStay(Collider other)
