@@ -29,6 +29,8 @@ public class PlayerMovement : MonoBehaviour {
     }
 
     private void HandleEvent(GameOverEvent msg) {
+        var dir = Vector2Int.zero;
+        motor.Move(dir);
         enabled = false;
     }
 }
