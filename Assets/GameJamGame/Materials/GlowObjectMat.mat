@@ -62,7 +62,7 @@ Material:
     - _DstBlend: 0
     - _EnableFog: 0
     - _EnableTransparency: 1
-    - _Fade: 0.53339845
+    - _Fade: 0.56390643
     - _GlossMapScale: 1
     - _Glossiness: 0.5
     - _GlossyReflections: 1

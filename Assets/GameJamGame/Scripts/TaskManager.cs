@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TaskManager : MonoBehaviour {
 
@@ -168,6 +169,11 @@ public class TaskManager : MonoBehaviour {
     {
         yield return new WaitForSeconds(1f);
         gameOverPanel.SetActive(true);
+    }
+
+    public void ResetGame() //for call by the death screen button
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Update()
