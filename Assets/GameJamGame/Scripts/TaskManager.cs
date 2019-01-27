@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TaskManager : MonoBehaviour {
 
@@ -37,6 +38,9 @@ public class TaskManager : MonoBehaviour {
     private Image gameOverScreen;
     private bool gameOver = false;
     private bool isPaused = false;
+    private Text happyCounterText;
+    public int happyCounter;
+    private GameObject gameOverPanel;
 
     //Positions
     private Vector3 catPos;
@@ -51,6 +55,7 @@ public class TaskManager : MonoBehaviour {
 
     void Start () {
         EventBus.AddListener<PauseEvent>(HandleEvent);
+        EventBus.AddListener<HappyEvent>(HandleEvent);
 
         //set-up transforms
         catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
@@ -64,6 +69,8 @@ public class TaskManager : MonoBehaviour {
         timerBar = GameObject.FindGameObjectWithTag("TimerBar").GetComponent<RectTransform>();
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
         gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<Image>();
+        happyCounterText = GameObject.FindGameObjectWithTag("HappyCounter").GetComponent<Text>();
+        gameOverPanel = GameObject.FindGameObjectWithTag("GameOver");
 
         //Fill tasks arraylist:
         tasks.Add(new Task("barkcat", barkCatImage, 15f));
@@ -153,7 +160,20 @@ public class TaskManager : MonoBehaviour {
     {
         timerOn = false;
         gameOver = true;
+        taskBox.SetActive(false);
+        StartCoroutine(GameOverDelay());
         EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
+    }
+
+    IEnumerator GameOverDelay()
+    {
+        yield return new WaitForSeconds(1f);
+        gameOverPanel.SetActive(true);
+    }
+
+    public void ResetGame() //for call by the death screen button
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     private void Update()
@@ -170,6 +190,13 @@ public class TaskManager : MonoBehaviour {
     private void HandleEvent(PauseEvent msg)
     {
         isPaused = !isPaused;
+    }
+
+    private void HandleEvent(HappyEvent msg)
+    {
+        print("handled happiness");
+        happyCounter++;
+        happyCounterText.text = "Happy: " + happyCounter;
     }
 
 }

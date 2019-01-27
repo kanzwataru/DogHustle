@@ -75,9 +75,8 @@ public class Happy : MonoBehaviour {
         {
             isHappy = true;
             EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
+            EventBus.Emit<HappyEvent>(new HappyEvent());
             bubble.SetActive(!isHappy);
-            
-            happyCounter++;
             StartCoroutine(HappyToSad());
 
             cheer.SetActive(false);
