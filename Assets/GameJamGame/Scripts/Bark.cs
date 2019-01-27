@@ -13,6 +13,8 @@ public class Bark : MonoBehaviour {
     public AudioClip barkSound;
     public AudioClip drinkSound1;
     public AudioClip drinkSound2;
+    public AudioClip eatSound1;
+    public AudioClip eatSound2;
     private AudioSource source;
     private string action = "";
     private bool inTriggerZone = false; //for free barking
@@ -42,6 +44,18 @@ public class Bark : MonoBehaviour {
         }
     }
 
+    private void EatFoodSound()
+    {
+        if (Random.Range(0, 2) == 0)
+        {
+            source.PlayOneShot(eatSound1);
+        }
+        else
+        {
+            source.PlayOneShot(eatSound2);
+        }
+    }
+
     IEnumerator BarkBlink()
     {
         barkEffect.SetActive(true);
@@ -64,6 +78,7 @@ public class Bark : MonoBehaviour {
         {
             if (other.gameObject.tag == "FoodBowl")
             {
+                EatFoodSound();
                 action = "food";
                 print("Interacted with Food Bowl");
             }
@@ -73,9 +88,9 @@ public class Bark : MonoBehaviour {
                 action = "water";
                 print("Interacted with Water Bowl");
             }
-            else if (other.gameObject.tag == "BackDoor")
+            else if (other.gameObject.tag == "Cat")
             {
-                action = "back";
+                action = "cat";
                 print("Interacted with Back Door");
             }
 
