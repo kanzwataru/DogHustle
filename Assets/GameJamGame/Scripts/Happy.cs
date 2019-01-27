@@ -8,12 +8,11 @@ public class Happy : MonoBehaviour {
     //Proximity to dog will increase their happy status
     //Maxing out happiness changes human state and happy counter increases
     //After 10 seconds, state is reset and happy status returns to zero
-
-    public static int happyCounter = 0;
+    public static int happyCounter = 0; /* would be better to have this in a GameManager of some kind, instead of static */
 
     private float happyStatus = 0f;
     private float max = 10f;
-    private bool imHappy = false;
+    private bool isHappy = false;
     private bool isPaused = false;
 
     private void Start()
@@ -29,6 +28,8 @@ public class Happy : MonoBehaviour {
             {
                 happyStatus += Time.deltaTime;
             }
+
+            Debug.Log("Getting happy..." + happyStatus);
         }
 
     }
@@ -45,17 +46,19 @@ public class Happy : MonoBehaviour {
         }
 
         happyStatus = 0; //reset happy status
-        imHappy = false;
+        isHappy = false;
+        EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
     }
 
     private void Update()
     {
-        if (happyStatus >= max && imHappy == false)
+        if (happyStatus >= max && isHappy == false)
         {
-            imHappy = true;
+            isHappy = true;
+            EventBus.Emit<HappinessChangedEvent>(new HappinessChangedEvent() {person = transform.parent, happy = isHappy});
+            
             happyCounter++;
             StartCoroutine(HappyToSad());
-            EventBus.Emit<HappyEvent>(new HappyEvent()); //call animations
         }
     }
 
@@ -63,11 +66,4 @@ public class Happy : MonoBehaviour {
     {
         isPaused = !isPaused;
     }
-
-    /*
-    private void HandleEvent(HappyEvent msg)
-    {
-       
-    }
-    */
 }

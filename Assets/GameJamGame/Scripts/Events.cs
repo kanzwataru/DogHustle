@@ -7,9 +7,10 @@ public struct GameOverEvent
 	
 }
 
-public struct HappyEvent
+public struct HappinessChangedEvent
 {
-    GameObject person;
+    public Transform person;
+    public bool happy;
 }
 
 public struct PauseEvent

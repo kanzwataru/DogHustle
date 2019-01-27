@@ -6,9 +6,13 @@ public class MoveAnimCoop : MonoBehaviour {
 	IMovable movable;
 	AnimState state;
 
+	public bool happy = false;
+
 	void Start() {
 		movable = transform.parent.GetComponent<IMovable>();
 		state = GetComponent<AnimState>();
+
+		EventBus.AddListener<HappinessChangedEvent>(HandleEvent);
 	}
 
 	void Update () {
@@ -19,7 +23,16 @@ public class MoveAnimCoop : MonoBehaviour {
 				state.EnsureState("walk");
 		}
 		else {
-			state.EnsureState("idle");
+			if(happy)
+				state.EnsureState("idle");
+			else
+				state.EnsureState("sadidle");
+		}
+	}
+
+	void HandleEvent(HappinessChangedEvent msg) {
+		if(msg.person == transform.parent) {
+			happy = msg.happy;
 		}
 	}
 }
