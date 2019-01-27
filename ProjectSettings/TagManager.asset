@@ -12,6 +12,7 @@ TagManager:
   - TaskImage
   - TimerBar
   - Cat
+  - GameOverScreen
   layers:
   - Default
   - TransparentFX
