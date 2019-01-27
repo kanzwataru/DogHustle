@@ -2985,19 +2985,6 @@ Prefab:
       propertyPath: m_RootOrder
       value: 8
       objectReference: {fileID: 0}
-    - target: {fileID: 1863149863891110, guid: 85872176fdf3fc546b5a2a3acb531a95, type: 2}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114166396615004628, guid: 85872176fdf3fc546b5a2a3acb531a95,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1582008629189018, guid: 85872176fdf3fc546b5a2a3acb531a95, type: 2}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85872176fdf3fc546b5a2a3acb531a95, type: 2}
   m_IsPrefabAsset: 0
@@ -3969,6 +3956,10 @@ Prefab:
       propertyPath: m_TagString
       value: Wall
       objectReference: {fileID: 0}
+    - target: {fileID: 100206, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2, type: 3}
+      propertyPath: m_TagString
+      value: Hydrant
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2, type: 3}
   m_IsPrefabAsset: 0
@@ -4142,6 +4133,23 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1767561342}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1768775936 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100206, guid: 2ccdc1f8261b04462a69b7f70f7eb7e2,
+    type: 3}
+  m_PrefabInternal: {fileID: 1728090916}
+--- !u!135 &1768775937
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1768775936}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.08
+  m_Center: {x: 11.202626, y: 0.84, z: 23.356602}
 --- !u!1 &1774003863
 GameObject:
   m_ObjectHideFlags: 0

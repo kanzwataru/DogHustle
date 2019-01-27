@@ -120,6 +120,8 @@ ModelImporter:
     100228: Garagewall4_0000
     100230: Other
     100232: Other_0000
+    100234: Bg
+    100236: Bg_0000
     400000: Bathroom
     400002: Bathroomfloor
     400004: Bathroomwall1
@@ -237,6 +239,8 @@ ModelImporter:
     400228: Garagewall4_0000
     400230: Other
     400232: Other_0000
+    400234: Bg
+    400236: Bg_0000
     2100000: Single Sided Material
     2100002: Double Sided Material
     2100004: No Name
@@ -317,6 +321,7 @@ ModelImporter:
     2300148: Garagewall3_0000
     2300150: Garagewall4_0000
     2300152: Other_0000
+    2300154: Bg_0000
     3300000: Bathroomfloor
     3300002: Bathroomwall1
     3300004: Bathroomwall2
@@ -394,6 +399,7 @@ ModelImporter:
     3300148: Garagewall3_0000
     3300150: Garagewall4_0000
     3300152: Other_0000
+    3300154: Bg_0000
     4300000: Diningroomplant
     4300002: Diningroom-table
     4300004: Diningroom-wall
@@ -471,6 +477,7 @@ ModelImporter:
     4300148: FireHydrant_0000
     4300150: Other_0000
     4300152: Backyard_0000
+    4300154: Bg_0000
     6400000: Bathroomfloor
     6400002: Bathroomwall1
     6400004: Bathroomwall2
@@ -548,6 +555,7 @@ ModelImporter:
     6400148: Garagewall3_0000
     6400150: Garagewall4_0000
     6400152: Other_0000
+    6400154: Bg_0000
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
