@@ -63,6 +63,10 @@ public class Motor : MonoBehaviour, IMovable {
         {
             this.dir = dir;
         }
+        else
+        {
+            this.dir = Vector2Int.zero;
+        }
     }
 
     public bool isMoving() {

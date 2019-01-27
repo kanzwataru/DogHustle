@@ -36,6 +36,8 @@ public class TaskManager : MonoBehaviour {
     private Vector3 startWidth = new Vector3(1, 1, 1);
     private Vector3 endWidth = new Vector3(0, 1, 1);
     private bool timerOn = true;
+    private Image gameOverScreen;
+    private bool gameOver = false;
 
     //Positions
     private Vector3 catPos;
@@ -61,6 +63,7 @@ public class TaskManager : MonoBehaviour {
         taskBox = GameObject.FindGameObjectWithTag("TaskBox");
         timerBar = GameObject.FindGameObjectWithTag("TimerBar").GetComponent<RectTransform>();
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
+        gameOverScreen = GameObject.FindGameObjectWithTag("GameOverScreen").GetComponent<Image>();
 
         //Fill tasks arraylist:
         tasks.Add(new Task(barkCatImage, 15f, BarkAt, catPos));
@@ -154,9 +157,25 @@ public class TaskManager : MonoBehaviour {
             }
         }
         timerBar.localScale = endWidth;
-        timerOn = false;
-        EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
+        GameOver();
+    }
 
+    public void GameOver()
+    {
+        timerOn = false;
+        gameOver = true;
+        EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
+    }
+
+    private void Update()
+    {
+        if (gameOver)
+        {
+            //GAME OVER
+            Color color = gameOverScreen.color;
+            color.a = Mathf.MoveTowards(0, 1, Time.deltaTime);
+            gameOverScreen.color = color;
+        }
     }
 
 }
