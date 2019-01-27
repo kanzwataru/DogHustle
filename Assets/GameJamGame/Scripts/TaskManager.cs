@@ -23,33 +23,35 @@ public class TaskManager : MonoBehaviour {
 
     //TIMED TASKS THE PLAYER MUST DO
 
+    //UI
     private GameObject taskBox;
     private Text timerText;
     private Animator iconAnimator;
-
     public Texture foodImage;
     public Texture waterImage;
+    public Texture barkCatImage;
     private GameObject currentImageObject;
     private RawImage currentImage;
     private RectTransform timerBar;
     private Vector3 startWidth = new Vector3(1, 1, 1);
     private Vector3 endWidth = new Vector3(0, 1, 1);
+    private bool timerOn = true;
 
-    private Vector3 backDoorPos;
+    //Positions
+    private Vector3 catPos;
     private Vector3 waterBowlPos;
     private Vector3 foodBowlPos;
-
     public static string taskLocation = "";
-    private Task currentTask;
 
+    //Tasks
+    private Task currentTask;
     private List<Task> tasks = new List<Task>();
     private int task;
-    private bool timerOn = true;
 
     void Start () {
 
         //set-up transforms
-        //backDoorPos = GameObject.FindGameObjectWithTag("BackDoor").GetComponent<Transform>().position;
+        catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
         waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>().position;
         foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
 
@@ -61,7 +63,7 @@ public class TaskManager : MonoBehaviour {
         iconAnimator = taskBox.GetComponentInChildren<Animator>();
 
         //Fill tasks arraylist:
-        //tasks.Add(new Task(foodImage, 15f, BarkAt, backDoorPos));
+        tasks.Add(new Task(barkCatImage, 15f, BarkAt, catPos));
         tasks.Add(new Task(foodImage, 20f, EatAt, foodBowlPos));
         tasks.Add(new Task(waterImage, 20f, DrinkAt, waterBowlPos));
 
@@ -117,7 +119,7 @@ public class TaskManager : MonoBehaviour {
 
     private void BarkAt(Vector3 location)
     {
-        taskLocation = "back";
+        taskLocation = "cat";
     }
 
     private void DrinkAt(Vector3 location)

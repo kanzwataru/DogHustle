@@ -5,13 +5,13 @@ TagManager:
   serializedVersion: 2
   tags:
   - Wall
-  - BackDoor
   - FoodBowl
   - WaterBowl
   - TaskBox
   - TimerText
   - TaskImage
   - TimerBar
+  - Cat
   layers:
   - Default
   - TransparentFX
