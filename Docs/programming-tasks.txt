@@ -2,19 +2,19 @@
 * human movement
 
 - bounds
-- game state (pause, win, lose)
-- menu
+^ game state (pause, win, lose)
+* menu
 
 - sadness mechanic
 - (alergic mechanic)
 - (burglars)
 
 - (fog of war aesthetic)
-- lineart/pulsing
-- shadows
+* lineart/pulsing
+* shadows
 - (lighting)
 
-- sounds
+^ sounds
 - music
 
 

@@ -1,0 +1,22 @@
+*******
+Task list "icons"
+
+- not started
+^ in progress
+* done
+
+(stuff in brackets is optional)
+*******
+
+
+- fire hydrant icon
+- music
+- menu graphics
+- instruction page
+- (ui stuff?)
+- (design newscaster??)
+
+^ house
+- mother animations
+- child
+
