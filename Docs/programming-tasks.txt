@@ -13,6 +13,7 @@
 * lineart/pulsing
 * shadows
 - (lighting)
+- wall transparency switching
 
 ^ sounds
 - music
