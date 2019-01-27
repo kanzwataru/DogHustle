@@ -345,6 +345,7 @@ GameObject:
   - component: {fileID: 20470038322370276}
   - component: {fileID: 81524762643123808}
   - component: {fileID: 114164105331698236}
+  - component: {fileID: 114768680900608804}
   m_Layer: 0
   m_Name: maincam
   m_TagString: MainCamera
@@ -1981,6 +1982,24 @@ MonoBehaviour:
   eatSound1: {fileID: 8300000, guid: da35a331002fa67438e2e39757e7e4bf, type: 3}
   eatSound2: {fileID: 8300000, guid: 567b2ff2ddf842a4e99029e7d5aed2ce, type: 3}
   canBark: 1
+--- !u!114 &114768680900608804
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1784015537091668}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 80077914c704c46f0b4c38c1dcce2cb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wallLayerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  wallTag: Wall
+  wallMatTemplate: {fileID: 2100000, guid: 188dca09fc1c14b98906259b7c61006f, type: 2}
+  fadedOpacity: 0.2
+  fadeTime: 2
 --- !u!114 &114828641413127634
 MonoBehaviour:
   m_ObjectHideFlags: 1
