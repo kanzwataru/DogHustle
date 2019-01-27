@@ -18,6 +18,7 @@ public class Bark : MonoBehaviour {
     private AudioSource source;
     private string action = "";
     private bool inTriggerZone = false; //for free barking
+    public bool canBark = true;
 
     private void Start()
     {
@@ -74,7 +75,7 @@ public class Bark : MonoBehaviour {
 
     private void OnTriggerStay(Collider other)
     {
-        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark)
+        if (Input.GetKey(KeyCode.Space) && inTriggerZone && Time.time > nextBark && canBark)
         {
             if (other.gameObject.tag == "FoodBowl")
             {
@@ -111,7 +112,7 @@ public class Bark : MonoBehaviour {
 
     private void Update()
     {
-        if (!inTriggerZone)
+        if (!inTriggerZone && canBark)
         {
             if (Input.GetKey(KeyCode.Space) && Time.time > nextBark)
             {

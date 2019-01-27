@@ -163,7 +163,7 @@ public class TaskManager : MonoBehaviour {
     public void GameOver()
     {
         timerOn = false;
-        gameOver = true;
+        //gameOver = true;
         EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
     }
 
@@ -173,7 +173,7 @@ public class TaskManager : MonoBehaviour {
         {
             //GAME OVER
             Color color = gameOverScreen.color;
-            color.a = Mathf.MoveTowards(0, 1, Time.deltaTime);
+            color.a = Mathf.MoveTowards(color.a, 255, Time.deltaTime);
             gameOverScreen.color = color;
         }
     }
