@@ -25,7 +25,6 @@ public class TaskManager : MonoBehaviour {
 
     //UI
     private GameObject taskBox;
-    private Text timerText;
     private Animator iconAnimator;
     public Texture foodImage;
     public Texture waterImage;
@@ -38,6 +37,7 @@ public class TaskManager : MonoBehaviour {
     private bool timerOn = true;
     private Image gameOverScreen;
     private bool gameOver = false;
+    private bool isPaused = false;
 
     //Positions
     private Vector3 catPos;
@@ -51,6 +51,7 @@ public class TaskManager : MonoBehaviour {
     private int task;
 
     void Start () {
+        EventBus.AddListener<PauseEvent>(HandleEvent);
 
         //set-up transforms
         catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
@@ -142,6 +143,11 @@ public class TaskManager : MonoBehaviour {
 
         while (progress <= 1)
         {
+            while (isPaused)
+            {
+                yield return null;
+            }
+
             timerBar.localScale = Vector3.Lerp(startWidth, endWidth, progress);
             progress += Time.deltaTime * speed;
             yield return null;
@@ -155,6 +161,7 @@ public class TaskManager : MonoBehaviour {
             {
                 iconAnimator.SetBool("Urgent", true);
             }
+
         }
         timerBar.localScale = endWidth;
         GameOver();
@@ -163,7 +170,7 @@ public class TaskManager : MonoBehaviour {
     public void GameOver()
     {
         timerOn = false;
-        //gameOver = true;
+        gameOver = true;
         EventBus.Emit<GameOverEvent>(new GameOverEvent()); //game over
     }
 
@@ -176,6 +183,11 @@ public class TaskManager : MonoBehaviour {
             color.a = Mathf.MoveTowards(color.a, 255, Time.deltaTime);
             gameOverScreen.color = color;
         }
+    }
+
+    private void HandleEvent(PauseEvent msg)
+    {
+        isPaused = !isPaused;
     }
 
 }

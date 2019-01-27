@@ -38,9 +38,10 @@ public class AIHuman : MonoBehaviour, IMovable {
 
 		DecideGoals();
 		MoveToNextGoal();
-	}
-	
-	void Update () {
+        EventBus.AddListener<PauseEvent>(HandleEvent);
+    }
+
+    void Update () {
 		switch(state) {
 		case EAIState.Idling:
 			idleTimer -= Time.deltaTime;
@@ -80,4 +81,9 @@ public class AIHuman : MonoBehaviour, IMovable {
 
 		idleTimer = currentGoal.dwellTime;
 	}
+
+    private void HandleEvent(PauseEvent msg)
+    {
+        agent.enabled = !agent.enabled;
+    }
 }

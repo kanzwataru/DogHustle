@@ -9,7 +9,6 @@ public static class IntExt {
 }
 
 public class Motor : MonoBehaviour, IMovable {
-    public bool canMove = true;
     public float maxSpeed = 30f;
     public float accelRate = 10f;
     public float decelRate = 5f;
@@ -59,14 +58,7 @@ public class Motor : MonoBehaviour, IMovable {
 
     public void Move(Vector2Int dir)
     {
-        if (canMove)
-        {
-            this.dir = dir;
-        }
-        else
-        {
-            this.dir = Vector2Int.zero;
-        }
+        this.dir = dir;
     }
 
     public bool isMoving() {
