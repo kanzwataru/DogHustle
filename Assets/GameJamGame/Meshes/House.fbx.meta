@@ -35,6 +35,48 @@ ModelImporter:
     100058: Tub
     100060: Tv
     100062: Wip
+    100064: Bathroomfloor_0000
+    100066: Bathroomwall1_0000
+    100068: Bathroomwall2_0000
+    100070: bathroomwall3_0000
+    100072: Bathroomwall4_0000
+    100074: Coffeetable_0000
+    100076: Diningroom-table_0000
+    100078: Diningroom-wall3_0000
+    100080: Diningroom-wall_0000
+    100082: Diningroomfloor_0000
+    100084: Diningroomplant_0000
+    100086: Entrance
+    100088: Entrance_0000
+    100090: Floor-livingroom_0000
+    100092: Frontyard_0000
+    100094: Kitchen-props
+    100096: Kitchen-props_0000
+    100098: Kitchenfloor
+    100100: Kitchenfloor_0000
+    100102: Kitchenprops2
+    100104: Kitchenprops2_0000
+    100106: Kitchenroom
+    100108: kitchentable
+    100110: kitchentable_0000
+    100112: Kitchenwall1
+    100114: Kitchenwall1_0000
+    100116: Kitchenwall3
+    100118: Kitchenwall3_0000
+    100120: Lamptable_0000
+    100122: Livingroom-wall1_0000
+    100124: Livingroom-wall2_0000
+    100126: NewLayer0_0000
+    100128: Oudoors_0000
+    100130: Plant_0000
+    100132: rug_0000
+    100134: Sink_0000
+    100136: Study
+    100138: Study_0000
+    100140: Toilet_0000
+    100142: Tub_0000
+    100144: Tv_0000
+    100146: Wip_0000
     400000: Bathroom
     400002: Bathroomfloor
     400004: Bathroomwall1
@@ -67,8 +109,51 @@ ModelImporter:
     400058: Tub
     400060: Tv
     400062: Wip
+    400064: Bathroomfloor_0000
+    400066: Bathroomwall1_0000
+    400068: Bathroomwall2_0000
+    400070: bathroomwall3_0000
+    400072: Bathroomwall4_0000
+    400074: Coffeetable_0000
+    400076: Diningroom-table_0000
+    400078: Diningroom-wall3_0000
+    400080: Diningroom-wall_0000
+    400082: Diningroomfloor_0000
+    400084: Diningroomplant_0000
+    400086: Entrance
+    400088: Entrance_0000
+    400090: Floor-livingroom_0000
+    400092: Frontyard_0000
+    400094: Kitchen-props
+    400096: Kitchen-props_0000
+    400098: Kitchenfloor
+    400100: Kitchenfloor_0000
+    400102: Kitchenprops2
+    400104: Kitchenprops2_0000
+    400106: Kitchenroom
+    400108: kitchentable
+    400110: kitchentable_0000
+    400112: Kitchenwall1
+    400114: Kitchenwall1_0000
+    400116: Kitchenwall3
+    400118: Kitchenwall3_0000
+    400120: Lamptable_0000
+    400122: Livingroom-wall1_0000
+    400124: Livingroom-wall2_0000
+    400126: NewLayer0_0000
+    400128: Oudoors_0000
+    400130: Plant_0000
+    400132: rug_0000
+    400134: Sink_0000
+    400136: Study
+    400138: Study_0000
+    400140: Toilet_0000
+    400142: Tub_0000
+    400144: Tv_0000
+    400146: Wip_0000
     2100000: Single Sided Material
     2100002: Double Sided Material
+    2100004: No Name
     2300000: Bathroomfloor
     2300002: Bathroomwall1
     2300004: Bathroomwall2
@@ -94,6 +179,38 @@ ModelImporter:
     2300044: Tub
     2300046: Tv
     2300048: Wip
+    2300050: Bathroomfloor_0000
+    2300052: Bathroomwall1_0000
+    2300054: Bathroomwall2_0000
+    2300056: bathroomwall3_0000
+    2300058: Bathroomwall4_0000
+    2300060: Coffeetable_0000
+    2300062: Diningroom-table_0000
+    2300064: Diningroom-wall3_0000
+    2300066: Diningroom-wall_0000
+    2300068: Diningroomfloor_0000
+    2300070: Diningroomplant_0000
+    2300072: Entrance_0000
+    2300074: Floor-livingroom_0000
+    2300076: Frontyard_0000
+    2300078: Kitchen-props_0000
+    2300080: Kitchenfloor_0000
+    2300082: Kitchenprops2_0000
+    2300084: kitchentable_0000
+    2300086: Kitchenwall1_0000
+    2300088: Kitchenwall3_0000
+    2300090: Lamptable_0000
+    2300092: Livingroom-wall1_0000
+    2300094: Livingroom-wall2_0000
+    2300096: Oudoors_0000
+    2300098: Plant_0000
+    2300100: rug_0000
+    2300102: Sink_0000
+    2300104: Study_0000
+    2300106: Toilet_0000
+    2300108: Tub_0000
+    2300110: Tv_0000
+    2300112: Wip_0000
     3300000: Bathroomfloor
     3300002: Bathroomwall1
     3300004: Bathroomwall2
@@ -119,6 +236,38 @@ ModelImporter:
     3300044: Tub
     3300046: Tv
     3300048: Wip
+    3300050: Bathroomfloor_0000
+    3300052: Bathroomwall1_0000
+    3300054: Bathroomwall2_0000
+    3300056: bathroomwall3_0000
+    3300058: Bathroomwall4_0000
+    3300060: Coffeetable_0000
+    3300062: Diningroom-table_0000
+    3300064: Diningroom-wall3_0000
+    3300066: Diningroom-wall_0000
+    3300068: Diningroomfloor_0000
+    3300070: Diningroomplant_0000
+    3300072: Entrance_0000
+    3300074: Floor-livingroom_0000
+    3300076: Frontyard_0000
+    3300078: Kitchen-props_0000
+    3300080: Kitchenfloor_0000
+    3300082: Kitchenprops2_0000
+    3300084: kitchentable_0000
+    3300086: Kitchenwall1_0000
+    3300088: Kitchenwall3_0000
+    3300090: Lamptable_0000
+    3300092: Livingroom-wall1_0000
+    3300094: Livingroom-wall2_0000
+    3300096: Oudoors_0000
+    3300098: Plant_0000
+    3300100: rug_0000
+    3300102: Sink_0000
+    3300104: Study_0000
+    3300106: Toilet_0000
+    3300108: Tub_0000
+    3300110: Tv_0000
+    3300112: Wip_0000
     4300000: Diningroomplant
     4300002: Diningroom-table
     4300004: Diningroom-wall
@@ -144,6 +293,38 @@ ModelImporter:
     4300044: Plant
     4300046: Livingroom-wall2
     4300048: Tv
+    4300050: Diningroomplant_0000
+    4300052: Diningroom-table_0000
+    4300054: Diningroom-wall_0000
+    4300056: Diningroom-wall3_0000
+    4300058: Diningroomfloor_0000
+    4300060: kitchentable_0000
+    4300062: Kitchen-props_0000
+    4300064: Kitchenwall1_0000
+    4300066: Kitchenwall3_0000
+    4300068: Kitchenprops2_0000
+    4300070: Kitchenfloor_0000
+    4300072: Entrance_0000
+    4300074: Frontyard_0000
+    4300076: Study_0000
+    4300078: Wip_0000
+    4300080: Sink_0000
+    4300082: Tub_0000
+    4300084: Toilet_0000
+    4300086: Bathroomwall1_0000
+    4300088: Bathroomwall2_0000
+    4300090: bathroomwall3_0000
+    4300092: Bathroomwall4_0000
+    4300094: Bathroomfloor_0000
+    4300096: Oudoors_0000
+    4300098: Coffeetable_0000
+    4300100: Lamptable_0000
+    4300102: Livingroom-wall1_0000
+    4300104: Floor-livingroom_0000
+    4300106: rug_0000
+    4300108: Plant_0000
+    4300110: Livingroom-wall2_0000
+    4300112: Tv_0000
     6400000: Bathroomfloor
     6400002: Bathroomwall1
     6400004: Bathroomwall2
@@ -169,12 +350,49 @@ ModelImporter:
     6400044: Tub
     6400046: Tv
     6400048: Wip
+    6400050: Bathroomfloor_0000
+    6400052: Bathroomwall1_0000
+    6400054: Bathroomwall2_0000
+    6400056: bathroomwall3_0000
+    6400058: Bathroomwall4_0000
+    6400060: Coffeetable_0000
+    6400062: Diningroom-table_0000
+    6400064: Diningroom-wall3_0000
+    6400066: Diningroom-wall_0000
+    6400068: Diningroomfloor_0000
+    6400070: Diningroomplant_0000
+    6400072: Entrance_0000
+    6400074: Floor-livingroom_0000
+    6400076: Frontyard_0000
+    6400078: Kitchen-props_0000
+    6400080: Kitchenfloor_0000
+    6400082: Kitchenprops2_0000
+    6400084: kitchentable_0000
+    6400086: Kitchenwall1_0000
+    6400088: Kitchenwall3_0000
+    6400090: Lamptable_0000
+    6400092: Livingroom-wall1_0000
+    6400094: Livingroom-wall2_0000
+    6400096: Oudoors_0000
+    6400098: Plant_0000
+    6400100: rug_0000
+    6400102: Sink_0000
+    6400104: Study_0000
+    6400106: Toilet_0000
+    6400108: Tub_0000
+    6400110: Tv_0000
+    6400112: Wip_0000
     2186277476908879412: ImportLogs
   externalObjects:
   - first:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Double Sided Material
+    second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: No Name
     second: {fileID: 2100000, guid: f99526d6ff451426caad4055753073da, type: 2}
   - first:
       type: UnityEngine:Material
