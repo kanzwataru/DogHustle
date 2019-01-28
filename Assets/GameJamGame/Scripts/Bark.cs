@@ -102,9 +102,9 @@ public class Bark : MonoBehaviour {
                 DrinkWaterSound();
                 action = "water";
             }
-            else if (other.gameObject.tag == "Hydrant")
+            else if (other.gameObject.tag == "NewHydrant")
             {
-                action = "hydrant";
+                action = "NewHydrant";
             }
 
             if (other.gameObject.tag == "Cat")

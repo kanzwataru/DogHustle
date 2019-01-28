@@ -17,6 +17,7 @@ TagManager:
   - Bone
   - HappyCounter
   - GameOver
+  - NewHydrant
   layers:
   - Default
   - TransparentFX

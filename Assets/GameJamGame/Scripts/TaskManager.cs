@@ -10,13 +10,15 @@ public class TaskManager : MonoBehaviour {
     {
         public string description;
         public Texture image;
+        public Transform target;
         public float timer;
 
-        public Task(string description, Texture image, float timer)
+        public Task(string description, Texture image, float timer, Transform target)
         {
             this.description = description;
             this.image = image;
             this.timer = timer;
+            this.target = target;
         }
     }
 
@@ -43,9 +45,9 @@ public class TaskManager : MonoBehaviour {
     private GameObject gameOverPanel;
 
     //Positions
-    private Vector3 catPos;
-    private Vector3 waterBowlPos;
-    private Vector3 foodBowlPos;
+    private Transform catPos;
+    private Transform waterBowlPos;
+    private Transform foodBowlPos;
     public static string taskLocation = "";
 
     //Tasks
@@ -53,14 +55,21 @@ public class TaskManager : MonoBehaviour {
     private List<Task> tasks = new List<Task>();
     private int task;
 
+    //Misc
+    private Camera cam;
+    private Canvas canvas;
+
     void Start () {
         EventBus.AddListener<PauseEvent>(HandleEvent);
         EventBus.AddListener<HappyEvent>(HandleEvent);
 
+        cam = Camera.main;
+        canvas = transform.GetChild(0).GetComponent<Canvas>();
+
         //set-up transforms
-        catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>().position;
-        waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>().position;
-        foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>().position;
+        catPos = GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>();
+        waterBowlPos = GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>();
+        foodBowlPos = GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>();
 
         //Get UI:
         currentImageObject = GameObject.FindGameObjectWithTag("TaskImage");
@@ -73,10 +82,10 @@ public class TaskManager : MonoBehaviour {
         gameOverPanel = GameObject.FindGameObjectWithTag("GameOver");
 
         //Fill tasks arraylist:
-        tasks.Add(new Task("barkcat", barkCatImage, 15f));
-        tasks.Add(new Task("food", foodImage, 20f));
-        tasks.Add(new Task("water", waterImage, 20f));
-        tasks.Add(new Task("hydrant", fireHydrantImage, 20f)); //fire hydrant pos?
+        tasks.Add(new Task("barkcat", barkCatImage, 15f, GameObject.FindGameObjectWithTag("Cat").GetComponent<Transform>()));
+        tasks.Add(new Task("food", foodImage, 20f, GameObject.FindGameObjectWithTag("FoodBowl").GetComponent<Transform>()));
+        tasks.Add(new Task("water", waterImage, 20f, GameObject.FindGameObjectWithTag("WaterBowl").GetComponent<Transform>()));
+        tasks.Add(new Task("NewHydrant", fireHydrantImage, 20f, GameObject.FindGameObjectWithTag("NewHydrant").GetComponent<Transform>())); //fire hydrant pos?
 
         GetNewTask(); //tasks all have their own text, times, and RULES
     }
@@ -185,6 +194,12 @@ public class TaskManager : MonoBehaviour {
             color.a = Mathf.MoveTowards(color.a, 255, Time.deltaTime);
             gameOverScreen.color = color;
         }
+
+        Vector3 view_pos = cam.WorldToScreenPoint(currentTask.target.position);
+        currentImageObject.GetComponent<RectTransform>().anchoredPosition = new Vector2(
+            view_pos.x,
+            view_pos.y
+        );
     }
 
     private void HandleEvent(PauseEvent msg)
