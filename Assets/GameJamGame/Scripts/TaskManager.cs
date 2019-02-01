@@ -212,4 +212,10 @@ public class TaskManager : MonoBehaviour {
         happyCounterText.text = "Happy: " + happyCounter;
     }
 
+    public void QuitGame()
+    {
+        SceneManager.LoadScene("Menu");
+        print("quit");
+    }
+
 }

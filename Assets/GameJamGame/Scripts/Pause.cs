@@ -31,6 +31,10 @@ public class Pause : MonoBehaviour {
         {
             TogglePause();
         }
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            SceneManager.LoadScene("Menu");
+        }
 	}
 
 }
